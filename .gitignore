@@ -1,0 +1,24 @@
+# secrets and local credentials
+.env
+*.env
+*.pem
+*.key
+
+# loader state (contains your instance's sys_ids)
+**/manifest*.json
+**/ground_truth.loaded*.json
+**/pdi_probe.json
+
+# Azure deployment outputs (may contain resource IDs)
+infra/*.outputs.json
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# local runs (commit selected results under evaluation/results/ instead)
+runs/
+.DS_Store
