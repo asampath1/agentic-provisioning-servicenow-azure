@@ -127,7 +127,7 @@ The Azure trial ends **mid-December 2026**, so the live Azure parts must be **do
 |---|---|---|
 | P1 | Bicep templates + Template Specs + Policy + Key Vault + worker identity (`infra/`). **Deployed 2026-11-19** | Azure |
 | P2 | ServiceNow catalog items, variables, approver group and approval rules on the PDI (`servicenow/catalog.py`, [details](../servicenow/README.md)). **Done 2026-11-20**: verified with a request ordered as a synthetic employee and approved by the cloud team | PDI |
-| P3 | Validation agent + synthetic request set + scoring | offline |
+| P3 | Validation agent + synthetic request set + scoring ([policy](request-policy.md), [results](../evaluation/README.md)). **Done 2026-11-20**: heuristic 4 of 17 wrong approvals, with Claude reading rule 7: 0 of 17 ($0.04) | offline |
 | P4 | Provisioning worker: approved RITM → Template Spec deployment → standard change + RITM update | Azure + PDI |
 | P5 | Expiry and drift agents | Azure + PDI |
 | P6 | Live demo (one VM requested → validated → approved → built → expired → deleted), write-up, overview | both |

@@ -23,4 +23,7 @@ v1.0, never edit) and `../agentic-change-management-servicenow`.
   allow only eastus/eastus2/westus/northeurope/southeastasia/japanwest, one per region (this project: japanwest); B2ats_v2 / B2als_v2 VM sizes work (non-zonal). If `az` hangs, check IPv6.
 - `servicenow/catalog.py` (P2) creates the catalog items, approver group, request fields and approval business
   rules from `catalog_definition.py`; read-only unless `--apply`. It reuses the `Snow` client from `load_to_snow.py`.
-- Tests: `.venv/bin/python -m pytest -q` (the repo has its own .venv: requests, pytest).
+- Tests: `.venv/bin/python -m pytest -q` (the repo has its own .venv: requests, pytest, anthropic).
+- P3: `python -m agents --out runs/latest && python -m evaluation.score runs/latest` (validation agent, policy in
+  `docs/request-policy.md`); `--reasoner claude` reads rule 7 text with Claude; `--source servicenow [--write]`.
+  After any generator change: `cd synthetic-data && python3 generate_requests.py` (test_dataset checks freshness).

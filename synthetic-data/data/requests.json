@@ -1,0 +1,522 @@
+[
+ {
+  "key": "req:001",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.mishra",
+  "opened_at": "2026-11-19 08:45:00",
+  "variables": {
+   "purpose": "Developer sandbox for the payments retry library, unit and integration tests with mocks.",
+   "expires_on": "2026-12-06",
+   "justification": "",
+   "vm_size": "Standard_B2ats_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHjmRS8paczNwnEMg4aey3l5/j+h7WcsnVOIAMslFKkv aditya.banerjee@laptop"
+  }
+ },
+ {
+  "key": "req:002",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.muller",
+  "opened_at": "2026-11-19 00:30:00",
+  "variables": {
+   "purpose": "Shoppers will hit this box for the Black Friday checkout until the scale set is fixed.",
+   "expires_on": "2026-12-14",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILw1AlJILR4T9Xkn1LtzDwiXHTNHlLlx3+WxiJvB+54K ajay.garcia@laptop"
+  }
+ },
+ {
+  "key": "req:003",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.fernandes",
+  "opened_at": "2026-11-17 02:45:00",
+  "variables": {
+   "purpose": "Long-running soak test of the queue consumer with generated messages.",
+   "expires_on": "2027-01-16",
+   "justification": "",
+   "vm_size": "Standard_D2s_v5",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIArMzS7UHpOgkWl1JwxUkU8vdY7oBVV3OvJ3W9G1HEac ajay.fernandes@laptop"
+  }
+ },
+ {
+  "key": "req:004",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-20 14:30:00",
+  "variables": {
+   "purpose": "Try the new log shipping agent configuration on a throwaway Ubuntu box.",
+   "expires_on": "2026-12-04",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "ssh-ed25519"
+  }
+ },
+ {
+  "key": "req:005",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-17 02:00:00",
+  "variables": {
+   "purpose": "Developer sandbox for the payments retry library, unit and integration tests with mocks.",
+   "expires_on": "2026-11-22",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "AAAAC3NzaC1lZDI1NTE5AAAAIBr9 (copied from email)"
+  }
+ },
+ {
+  "key": "req:006",
+  "item": "Azure storage account",
+  "requested_for": "synth.ajay.mishra",
+  "opened_at": "2026-11-18 05:00:00",
+  "variables": {
+   "purpose": "VM needed",
+   "expires_on": "2026-11-22",
+   "justification": "",
+   "redundancy": "Standard_LRS",
+   "data_classification": "synthetic"
+  }
+ },
+ {
+  "key": "req:007",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-18 07:15:00",
+  "variables": {
+   "purpose": "testing",
+   "expires_on": "2026-12-05",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM2yLKgrq5+7/eXzsMjKnYWV4J2VcQtl8gTL7SP8FgKX aditya.banerjee@laptop"
+  }
+ },
+ {
+  "key": "req:008",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.muller",
+  "opened_at": "2026-11-17 18:00:00",
+  "variables": {
+   "purpose": "Try the open-source feature flag service with dummy flags.",
+   "expires_on": "2026-12-14",
+   "justification": "The load test needs 4 vCPUs to reach 2,000 requests per second; measured on a B2als.",
+   "vm_size": "Standard_D4s_v5",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFTLPpwhbDZU89mN1JDw20vWCNxicD/KElIUBBNX6xEX ajay.fernandes@laptop"
+  }
+ },
+ {
+  "key": "req:009",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-19 03:15:00",
+  "variables": {
+   "purpose": "Benchmark two JSON parsers with synthetic catalogue data.",
+   "expires_on": "2026-12-12",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICki8X+mDi0B70qWqd/SwRU3khN1kBShpxyvNUeypiJo ajay.muller@laptop"
+  }
+ },
+ {
+  "key": "req:010",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.fernandes",
+  "opened_at": "2026-11-19 17:15:00",
+  "variables": {
+   "purpose": "Dry run of the certificate renewal script against a self-signed test certificate.",
+   "expires_on": "2026-12-16",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO2bPlYTFU8WPm+rT/FUJFWB1uAD+LLN9tgY+Whk8Q7C aditya.banerjee@laptop"
+  }
+ },
+ {
+  "key": "req:011",
+  "item": "Azure storage account",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-18 18:45:00",
+  "variables": {
+   "purpose": "Shared folder for the team's planning spreadsheets.",
+   "expires_on": "2026-11-27",
+   "justification": "",
+   "redundancy": "Standard_LRS",
+   "data_classification": "internal"
+  }
+ },
+ {
+  "key": "req:012",
+  "item": "Azure storage account",
+  "requested_for": "synth.ajay.fernandes",
+  "opened_at": "2026-11-19 05:00:00",
+  "variables": {
+   "purpose": "Test the backup export format with a synthetic sample database dump.",
+   "expires_on": "2026-11-27",
+   "justification": "",
+   "redundancy": "Standard_LRS",
+   "data_classification": "synthetic"
+  }
+ },
+ {
+  "key": "req:013",
+  "item": "Azure storage account",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-18 00:30:00",
+  "variables": {
+   "purpose": "Copy of the payroll extract so finance can reconcile salaries offline.",
+   "expires_on": "2026-11-29",
+   "justification": "",
+   "redundancy": "Standard_LRS",
+   "data_classification": "synthetic"
+  }
+ },
+ {
+  "key": "req:014",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.fernandes",
+  "opened_at": "2026-11-18 06:30:00",
+  "variables": {
+   "purpose": "Our storefront points its DNS here while the main web tier is rebuilt next week.",
+   "expires_on": "2026-12-11",
+   "justification": "",
+   "vm_size": "Standard_B2ats_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP6gF6SDG8kiSHi6Z7nlb3SYf54w5HlUBuAm68SJJmXU ajay.garcia@laptop"
+  }
+ },
+ {
+  "key": "req:015",
+  "item": "Azure storage account",
+  "requested_for": "synth.ajay.garcia",
+  "opened_at": "2026-11-19 07:45:00",
+  "variables": {
+   "purpose": "Landing zone to test the blob lifecycle policy with fake log files.",
+   "expires_on": "2027-03-19",
+   "justification": "",
+   "redundancy": "Standard_LRS",
+   "data_classification": "synthetic"
+  }
+ },
+ {
+  "key": "req:016",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-16 11:00:00",
+  "variables": {
+   "purpose": "Try the new log shipping agent configuration on a throwaway Ubuntu box.",
+   "expires_on": "2026-11-25",
+   "justification": "",
+   "vm_size": "Standard_B2ats_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEGiUu3flAfpcgNlDQgWUXhFWx5gqc34+h1qerXLmr1l ajay.mishra@laptop"
+  }
+ },
+ {
+  "key": "req:017",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.fernandes",
+  "opened_at": "2026-11-17 11:15:00",
+  "variables": {
+   "purpose": "Reproduce the nginx 502 bug from INC0010598 with a copy of the config.",
+   "expires_on": "2026-12-02",
+   "justification": "The load test needs 4 vCPUs to reach 2,000 requests per second; measured on a B2als.",
+   "vm_size": "Standard_D2s_v5",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOkW7/7VcbjaTuIdmmpXT6TZo7OTXWivGfWTxwpE4EL9 ajay.fernandes@laptop"
+  }
+ },
+ {
+  "key": "req:018",
+  "item": "Azure storage account",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-17 03:00:00",
+  "variables": {
+   "purpose": "Sample images for the thumbnail service load test (stock test images).",
+   "expires_on": "2026-12-10",
+   "justification": "",
+   "redundancy": "Standard_LRS",
+   "data_classification": "synthetic"
+  }
+ },
+ {
+  "key": "req:019",
+  "item": "Azure storage account",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-19 20:15:00",
+  "variables": {
+   "purpose": "Keep an export of real customer data for analysis.",
+   "expires_on": "2026-11-25",
+   "justification": "",
+   "redundancy": "Standard_LRS",
+   "data_classification": "synthetic"
+  }
+ },
+ {
+  "key": "req:020",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.fernandes",
+  "opened_at": "2026-11-20 03:00:00",
+  "variables": {
+   "purpose": "Build and test the internal CLI tool packaging for Ubuntu 22.04.",
+   "expires_on": "2026-11-23",
+   "justification": "",
+   "vm_size": "Standard_B2ats_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICxMBncemgnMhnOgfEhQfC2LoJyuYPctj7IHOjDPb4py ajay.muller@laptop"
+  }
+ },
+ {
+  "key": "req:021",
+  "item": "Azure storage account",
+  "requested_for": "synth.ajay.garcia",
+  "opened_at": "2026-11-18 09:30:00",
+  "variables": {
+   "purpose": "Archive of signed supplier contracts.",
+   "expires_on": "2026-12-05",
+   "justification": "",
+   "redundancy": "Standard_LRS",
+   "data_classification": "confidential"
+  }
+ },
+ {
+  "key": "req:022",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.garcia",
+  "opened_at": "2026-11-18 21:30:00",
+  "variables": {
+   "purpose": "for work",
+   "expires_on": "2026-12-13",
+   "justification": "",
+   "vm_size": "Standard_D4s_v5",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMRu0k9BKXj24zKWCMY9cQU49C6ZJP3conlMKBP4zHN7 aditya.banerjee@laptop"
+  }
+ },
+ {
+  "key": "req:023",
+  "item": "Azure storage account",
+  "requested_for": "synth.ajay.muller",
+  "opened_at": "2026-11-20 12:30:00",
+  "variables": {
+   "purpose": "Hold build artefacts for the CLI tool test pipeline.",
+   "expires_on": "2026-12-10",
+   "justification": "",
+   "redundancy": "Standard_LRS",
+   "data_classification": "synthetic"
+  }
+ },
+ {
+  "key": "req:024",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-17 17:15:00",
+  "variables": {
+   "purpose": "Keep a reference VM to compare kernel updates against.",
+   "expires_on": "2027-02-15",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG6IyUEhjbprICzf0r2MoucRBLKYyySyfT6UHkt0lSOF ajay.fernandes@laptop"
+  }
+ },
+ {
+  "key": "req:025",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-17 02:15:00",
+  "variables": {
+   "purpose": "Benchmark two JSON parsers with synthetic catalogue data.",
+   "expires_on": "2026-12-05",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEA84yqx+UVUJ0qYv6o9ouj6/X6fXzJFn5BEa575XcH5QJKDzJeq3\nkQTTQXqiSWYpqtkS2cnKvq2zOXgrWEzl9rK60n98DtXt3npquvV8Ua9agePCjusnwicehP\nkX88N0jkRODRPf+ws1NhKp5nYVx4qqRGJ0BORtEynStZoiQnT27NLsDNdEFVzk1pL8GKZg\nrqMFRGM8RNWeH/G9U2VENpYjw6Njglg0aVlsW56zlIBVGYhLs1\n-----END OPENSSH PRIVATE KEY-----"
+  }
+ },
+ {
+  "key": "req:026",
+  "item": "Azure storage account",
+  "requested_for": "synth.ajay.fernandes",
+  "opened_at": "2026-11-16 20:45:00",
+  "variables": {
+   "purpose": "Static test site for the accessibility checker, dummy pages only.",
+   "expires_on": "2026-12-12",
+   "justification": "",
+   "redundancy": "Standard_ZRS",
+   "data_classification": "synthetic"
+  }
+ },
+ {
+  "key": "req:027",
+  "item": "Azure storage account",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-18 21:30:00",
+  "variables": {
+   "purpose": "Scratch space for the data pipeline unit tests (synthetic parquet files).",
+   "expires_on": "2026-11-26",
+   "justification": "",
+   "redundancy": "Standard_LRS",
+   "data_classification": "synthetic"
+  }
+ },
+ {
+  "key": "req:028",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.muller",
+  "opened_at": "2026-11-20 04:00:00",
+  "variables": {
+   "purpose": "Host the production checkout service until the new cluster is ready.",
+   "expires_on": "2026-12-01",
+   "justification": "",
+   "vm_size": "Standard_B2ats_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINZi4hwnw11zBYGqeA0ScUaWw/zsofjNNgWctdRm6Ppp ajay.mishra@laptop"
+  }
+ },
+ {
+  "key": "req:029",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-16 17:30:00",
+  "variables": {
+   "purpose": "test",
+   "expires_on": "2026-12-02",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAipwj9DBHoPB9vtC7/3Hi1gpy5IyrdoXmva74fpsXmS ajay.fernandes@laptop"
+  }
+ },
+ {
+  "key": "req:030",
+  "item": "Azure storage account",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-17 12:15:00",
+  "variables": {
+   "purpose": "Analysts need last month's orders table with buyer names, addresses and phone numbers.",
+   "expires_on": "2026-12-02",
+   "justification": "",
+   "redundancy": "Standard_LRS",
+   "data_classification": "synthetic"
+  }
+ },
+ {
+  "key": "req:031",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.aditya.banerjee",
+  "opened_at": "2026-11-17 01:15:00",
+  "variables": {
+   "purpose": "Retest the cron job fix from last sprint on Ubuntu.",
+   "expires_on": "2026-11-15",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPKhMo8RRkyn1uA22k2xqZ1w9kKdAtj6Ekh1vEfW3F82 ajay.fernandes@laptop"
+  }
+ },
+ {
+  "key": "req:032",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.garcia",
+  "opened_at": "2026-11-18 14:45:00",
+  "variables": {
+   "purpose": "Test the Ansible role for the new monitoring agent against a clean VM.",
+   "expires_on": "2026-11-24",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN6jtmtpEHT9bV1+No7cHgCJSBFFNv1E3WTOjvhyO5D5 ajay.muller@laptop"
+  }
+ },
+ {
+  "key": "req:033",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.mishra",
+  "opened_at": "2026-11-16 20:45:00",
+  "variables": {
+   "purpose": "Build and test the internal CLI tool packaging for Ubuntu 22.04.",
+   "expires_on": "2026-11-19",
+   "justification": "",
+   "vm_size": "Standard_B2ats_v2",
+   "ssh_public_key": "-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEA+n0A3yO5d9tKjMpqfKu58ShOYMqWwL8HlIsM3eYg+38og6OSZm\ne4Axhq/Z8uN4qpL5zgYbW0EWGycSqV47wvA5iz3pu+6n4S3B6IFES8NBdDALCjVqyWHeBc\nSv7NEthBlgk64dQdj2p8x2u627OEVD+QcGPlGivvzXUrvAc9tLHtU7mU2XsvdQgVxnAAaW\n52Fmuf1u96j4pzwHIV8VXJhD3GDcDXUriDZE6gB2CPa0/R1O2Z\n-----END OPENSSH PRIVATE KEY-----"
+  }
+ },
+ {
+  "key": "req:034",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.muller",
+  "opened_at": "2026-11-19 18:15:00",
+  "variables": {
+   "purpose": "Faster builds for the CLI tool test pipeline.",
+   "expires_on": "2026-11-22",
+   "justification": "",
+   "vm_size": "Standard_D4s_v5",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOe87ZmOf2FeCP8nXwcsRZ9BcgV0p4+RIJrZifXgaFeW ajay.mishra@laptop"
+  }
+ },
+ {
+  "key": "req:035",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.muller",
+  "opened_at": "2026-11-19 04:00:00",
+  "variables": {
+   "purpose": "Load test of the orders API before the December release, with generated orders only.",
+   "expires_on": "2026-11-23",
+   "justification": "",
+   "vm_size": "Standard_B2ats_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAt9sTCPKyvhOPrvPSWSgJkUfrMHwBwyx65oxHYT9odT ajay.mishra@laptop"
+  }
+ },
+ {
+  "key": "req:036",
+  "item": "Azure storage account",
+  "requested_for": "synth.ajay.fernandes",
+  "opened_at": "2026-11-16 22:30:00",
+  "variables": {
+   "purpose": "Static test site for the accessibility checker, dummy pages only.",
+   "expires_on": "2026-11-21",
+   "justification": "",
+   "redundancy": "Standard_LRS",
+   "data_classification": "synthetic"
+  }
+ },
+ {
+  "key": "req:037",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.mishra",
+  "opened_at": "2026-11-18 01:15:00",
+  "variables": {
+   "purpose": "Evaluate a Python 3.13 upgrade of the batch scripts using sample files.",
+   "expires_on": "2026-12-07",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFrSnQfAKvoRTxcqkHBxK8QuGaEbEZqAZuT7mBtctLnY ajay.garcia@laptop"
+  }
+ },
+ {
+  "key": "req:038",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.muller",
+  "opened_at": "2026-11-17 05:15:00",
+  "variables": {
+   "purpose": "Shared Linux box for the platform team's test scripts.",
+   "expires_on": "2027-01-01",
+   "justification": "",
+   "vm_size": "Standard_B2als_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA8w1+GsLoZ76TeBmr9uGBTnnuRrZoIiDMo8lRqTheob aditya.banerjee@laptop"
+  }
+ },
+ {
+  "key": "req:039",
+  "item": "Azure Linux test VM",
+  "requested_for": "synth.ajay.muller",
+  "opened_at": "2026-11-17 03:00:00",
+  "variables": {
+   "purpose": "Practice the disk-full runbook steps before the on-call rotation.",
+   "expires_on": "2026-12-07",
+   "justification": "",
+   "vm_size": "Standard_B2ats_v2",
+   "ssh_public_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMuGbpg0B3H7cr1qZbhd+vaqePdzlndnp1OXKb1+hJWd ajay.fernandes@laptop"
+  }
+ },
+ {
+  "key": "req:040",
+  "item": "Azure storage account",
+  "requested_for": "synth.ajay.fernandes",
+  "opened_at": "2026-11-19 01:15:00",
+  "variables": {
+   "purpose": "Sample images for the thumbnail service load test (stock test images).",
+   "expires_on": "2026-12-04",
+   "justification": "Want a copy in another region.",
+   "redundancy": "Standard_GRS",
+   "data_classification": "synthetic"
+  }
+ }
+]

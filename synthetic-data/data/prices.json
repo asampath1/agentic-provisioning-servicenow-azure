@@ -1,0 +1,13 @@
+{
+ "_source": "Azure Retail Prices API (prices.azure.com), Consumption, Linux, fetched 2026-11-20",
+ "region": "centralindia",
+ "currency": "USD",
+ "vm_hourly": {
+  "Standard_B2ats_v2": 0.00615,
+  "Standard_B2als_v2": 0.0246,
+  "Standard_D2s_v5": 0.101,
+  "Standard_D4s_v5": 0.202
+ },
+ "os_disk_monthly": {"S4 LRS": 1.6896},
+ "blob_hot_gb_month": {"Standard_LRS": 0.02, "Standard_ZRS": 0.025, "Standard_GRS": 0.04}
+}

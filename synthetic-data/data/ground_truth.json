@@ -1,0 +1,395 @@
+[
+ {
+  "key": "req:001",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 6.18,
+  "messy": false
+ },
+ {
+  "key": "req:002",
+  "decision": "reject",
+  "problems": [
+   "production_or_real_data"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 19.65,
+  "messy": true
+ },
+ {
+  "key": "req:003",
+  "decision": "approve_with_changes",
+  "problems": [
+   "expiry_too_long",
+   "size_not_allowed"
+  ],
+  "changes": {
+   "vm_size": "Standard_B2als_v2",
+   "expires_on": "2026-12-17"
+  },
+  "monthly_cost_usd": 75.42,
+  "messy": false
+ },
+ {
+  "key": "req:004",
+  "decision": "need_info",
+  "problems": [
+   "ssh_key_invalid"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 19.65,
+  "messy": false
+ },
+ {
+  "key": "req:005",
+  "decision": "need_info",
+  "problems": [
+   "ssh_key_invalid"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 19.65,
+  "messy": false
+ },
+ {
+  "key": "req:006",
+  "decision": "need_info",
+  "problems": [
+   "purpose_vague"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 2.0,
+  "messy": false
+ },
+ {
+  "key": "req:007",
+  "decision": "need_info",
+  "problems": [
+   "purpose_vague"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 19.65,
+  "messy": false
+ },
+ {
+  "key": "req:008",
+  "decision": "approve_with_changes",
+  "problems": [
+   "size_not_allowed"
+  ],
+  "changes": {
+   "vm_size": "Standard_B2als_v2"
+  },
+  "monthly_cost_usd": 149.15,
+  "messy": false
+ },
+ {
+  "key": "req:009",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 19.65,
+  "messy": false
+ },
+ {
+  "key": "req:010",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 19.65,
+  "messy": false
+ },
+ {
+  "key": "req:011",
+  "decision": "reject",
+  "problems": [
+   "data_not_allowed"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 2.0,
+  "messy": false
+ },
+ {
+  "key": "req:012",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 2.0,
+  "messy": false
+ },
+ {
+  "key": "req:013",
+  "decision": "reject",
+  "problems": [
+   "production_or_real_data"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 2.0,
+  "messy": true
+ },
+ {
+  "key": "req:014",
+  "decision": "reject",
+  "problems": [
+   "production_or_real_data"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 6.18,
+  "messy": true
+ },
+ {
+  "key": "req:015",
+  "decision": "approve_with_changes",
+  "problems": [
+   "expiry_too_long"
+  ],
+  "changes": {
+   "expires_on": "2026-12-19"
+  },
+  "monthly_cost_usd": 2.0,
+  "messy": false
+ },
+ {
+  "key": "req:016",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 6.18,
+  "messy": false
+ },
+ {
+  "key": "req:017",
+  "decision": "approve_with_changes",
+  "problems": [
+   "size_not_allowed"
+  ],
+  "changes": {
+   "vm_size": "Standard_B2als_v2"
+  },
+  "monthly_cost_usd": 75.42,
+  "messy": false
+ },
+ {
+  "key": "req:018",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 2.0,
+  "messy": false
+ },
+ {
+  "key": "req:019",
+  "decision": "reject",
+  "problems": [
+   "production_or_real_data"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 2.0,
+  "messy": false
+ },
+ {
+  "key": "req:020",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 6.18,
+  "messy": false
+ },
+ {
+  "key": "req:021",
+  "decision": "reject",
+  "problems": [
+   "data_not_allowed"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 2.0,
+  "messy": false
+ },
+ {
+  "key": "req:022",
+  "decision": "need_info",
+  "problems": [
+   "purpose_vague",
+   "size_not_allowed"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 149.15,
+  "messy": false
+ },
+ {
+  "key": "req:023",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 2.0,
+  "messy": false
+ },
+ {
+  "key": "req:024",
+  "decision": "approve_with_changes",
+  "problems": [
+   "expiry_too_long"
+  ],
+  "changes": {
+   "expires_on": "2026-12-17"
+  },
+  "monthly_cost_usd": 19.65,
+  "messy": false
+ },
+ {
+  "key": "req:025",
+  "decision": "reject",
+  "problems": [
+   "private_key"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 19.65,
+  "messy": false
+ },
+ {
+  "key": "req:026",
+  "decision": "approve_with_changes",
+  "problems": [
+   "redundancy_not_allowed"
+  ],
+  "changes": {
+   "redundancy": "Standard_LRS"
+  },
+  "monthly_cost_usd": 2.5,
+  "messy": false
+ },
+ {
+  "key": "req:027",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 2.0,
+  "messy": false
+ },
+ {
+  "key": "req:028",
+  "decision": "reject",
+  "problems": [
+   "production_or_real_data"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 6.18,
+  "messy": false
+ },
+ {
+  "key": "req:029",
+  "decision": "need_info",
+  "problems": [
+   "purpose_vague"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 19.65,
+  "messy": false
+ },
+ {
+  "key": "req:030",
+  "decision": "reject",
+  "problems": [
+   "production_or_real_data"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 2.0,
+  "messy": true
+ },
+ {
+  "key": "req:031",
+  "decision": "need_info",
+  "problems": [
+   "expiry_invalid"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 19.65,
+  "messy": false
+ },
+ {
+  "key": "req:032",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 19.65,
+  "messy": false
+ },
+ {
+  "key": "req:033",
+  "decision": "reject",
+  "problems": [
+   "private_key"
+  ],
+  "changes": {},
+  "monthly_cost_usd": 6.18,
+  "messy": false
+ },
+ {
+  "key": "req:034",
+  "decision": "approve_with_changes",
+  "problems": [
+   "size_not_allowed"
+  ],
+  "changes": {
+   "vm_size": "Standard_B2als_v2"
+  },
+  "monthly_cost_usd": 149.15,
+  "messy": false
+ },
+ {
+  "key": "req:035",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 6.18,
+  "messy": false
+ },
+ {
+  "key": "req:036",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 2.0,
+  "messy": false
+ },
+ {
+  "key": "req:037",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 19.65,
+  "messy": false
+ },
+ {
+  "key": "req:038",
+  "decision": "approve_with_changes",
+  "problems": [
+   "expiry_too_long"
+  ],
+  "changes": {
+   "expires_on": "2026-12-17"
+  },
+  "monthly_cost_usd": 19.65,
+  "messy": false
+ },
+ {
+  "key": "req:039",
+  "decision": "approve",
+  "problems": [],
+  "changes": {},
+  "monthly_cost_usd": 6.18,
+  "messy": false
+ },
+ {
+  "key": "req:040",
+  "decision": "approve_with_changes",
+  "problems": [
+   "redundancy_not_allowed"
+  ],
+  "changes": {
+   "redundancy": "Standard_LRS"
+  },
+  "monthly_cost_usd": 4.0,
+  "messy": false
+ }
+]

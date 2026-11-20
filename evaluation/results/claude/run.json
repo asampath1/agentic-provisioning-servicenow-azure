@@ -1,0 +1,25 @@
+{
+ "source": "local",
+ "written": false,
+ "prices": "Azure Retail Prices API (prices.azure.com), Consumption, Linux, fetched 2026-11-20",
+ "reasoner": "claude",
+ "requests": 40,
+ "decisions": {
+  "approve": 14,
+  "reject": 10,
+  "approve_with_changes": 9,
+  "need_info": 7
+ },
+ "claude": {
+  "calls": 4,
+  "input_tokens": 4132,
+  "output_tokens": 1285,
+  "cached": 0,
+  "read": 40,
+  "model": "claude-opus-5-5",
+  "estimated_usd": 0.0422,
+  "rejected_quotes": 0,
+  "errors": [],
+  "fallback_batches": 0
+ }
+}

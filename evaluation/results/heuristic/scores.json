@@ -1,0 +1,47 @@
+{
+ "requests": 40,
+ "missing": 0,
+ "wrong_approvals": 4,
+ "should_block": 17,
+ "wrong_approval_keys": [
+  "req:002",
+  "req:013",
+  "req:014",
+  "req:030"
+ ],
+ "over_blocked": 0,
+ "decision_accuracy": 0.9,
+ "decision_macro_f1": 0.906,
+ "problems_precision": 1.0,
+ "problems_recall": 0.857,
+ "changes_exact": "9/9",
+ "cost_within_10pct": "40/40",
+ "cost_mean_abs_pct_error": 0.0,
+ "messy_correct": "0/4",
+ "confusion": {
+  "approve": {
+   "approve": 14,
+   "approve_with_changes": 0,
+   "need_info": 0,
+   "reject": 0
+  },
+  "approve_with_changes": {
+   "approve": 0,
+   "approve_with_changes": 9,
+   "need_info": 0,
+   "reject": 0
+  },
+  "need_info": {
+   "approve": 0,
+   "approve_with_changes": 0,
+   "need_info": 7,
+   "reject": 0
+  },
+  "reject": {
+   "approve": 4,
+   "approve_with_changes": 0,
+   "need_info": 0,
+   "reject": 6
+  }
+ }
+}

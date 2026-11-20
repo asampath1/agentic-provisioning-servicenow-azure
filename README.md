@@ -9,7 +9,8 @@ Vault**. Expired resources are cleaned up, and anything created outside the proc
 > No client or employer data is used.
 
 > **Status: in progress.** P1 (Azure platform: Key Vault, worker identity, Template Specs, Policy) deployed
-> 2026-11-19. P2 (ServiceNow catalog items and approval flow, [details](servicenow/README.md)) done 2026-11-20. Design: [docs/design.md](docs/design.md). The live Azure parts must be finished before the Azure trial ends
+> 2026-11-19. P2 (ServiceNow catalog items and approval flow, [details](servicenow/README.md)) and P3 (validation agent: 0 of
+> 17 wrong approvals with Claude, [results](evaluation/README.md)) done 2026-11-20. Design: [docs/design.md](docs/design.md). The live Azure parts must be finished before the Azure trial ends
 > (15 December 2026). Infrastructure: [infra/README.md](infra/README.md).
 
 Part of a series on agentic IT operations with ServiceNow:

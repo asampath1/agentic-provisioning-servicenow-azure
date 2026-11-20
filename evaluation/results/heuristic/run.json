@@ -1,0 +1,13 @@
+{
+ "source": "local",
+ "written": false,
+ "prices": "Azure Retail Prices API (prices.azure.com), Consumption, Linux, fetched 2026-11-20",
+ "reasoner": "heuristic",
+ "requests": 40,
+ "decisions": {
+  "approve": 18,
+  "approve_with_changes": 9,
+  "need_info": 7,
+  "reject": 6
+ }
+}
