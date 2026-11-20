@@ -60,6 +60,21 @@ resource kvVar 'Microsoft.Automation/automationAccounts/variables@2023-11-01' = 
   }
 }
 
+// The worker's runbook (P4). Bicep creates it empty; infra/publish-runbooks.sh uploads and publishes the code.
+// No schedule yet: it is started by hand (az automation runbook start) until the demo, then hourly.
+resource provisionRunbook 'Microsoft.Automation/automationAccounts/runbooks@2023-11-01' = {
+  parent: aa
+  name: 'RB-Provision-Requests'
+  location: automationLocation
+  tags: tags
+  properties: {
+    runbookType: 'PowerShell72'
+    logProgress: false
+    logVerbose: false
+    description: 'Builds approved SKR Cloud catalog requests from the Template Specs (pull model). SYNTH-SKR-PROV'
+  }
+}
+
 // Worker may READ secrets in this vault (not write or delete them).
 resource workerSecrets 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   name: guid(kv.id, aa.id, roles.keyVaultSecretsUser)

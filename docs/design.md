@@ -128,7 +128,7 @@ The Azure trial ends **mid-December 2026**, so the live Azure parts must be **do
 | P1 | Bicep templates + Template Specs + Policy + Key Vault + worker identity (`infra/`). **Deployed 2026-11-19** | Azure |
 | P2 | ServiceNow catalog items, variables, approver group and approval rules on the PDI (`servicenow/catalog.py`, [details](../servicenow/README.md)). **Done 2026-11-20**: verified with a request ordered as a synthetic employee and approved by the cloud team | PDI |
 | P3 | Validation agent + synthetic request set + scoring ([policy](request-policy.md), [results](../evaluation/README.md)). **Done 2026-11-20**: heuristic 4 of 17 wrong approvals, with Claude reading rule 7: 0 of 17 ($0.04) | offline |
-| P4 | Provisioning worker: approved RITM → Template Spec deployment → standard change + RITM update | Azure + PDI |
+| P4 | Provisioning worker: approved RITM → Template Spec deployment → change record + RITM update (`infra/runbooks/RB-Provision-Requests.ps1`). **Done 2026-11-20**: RITM0010005 built as `vm-test-ritm0010005`, recorded as CHG0030412 | Azure + PDI |
 | P5 | Expiry and drift agents | Azure + PDI |
 | P6 | Live demo (one VM requested → validated → approved → built → expired → deleted), write-up, overview | both |
 | — | **Teardown:** delete the resource group, the Template Specs, the policy assignment and the custom role | Azure |
@@ -143,4 +143,12 @@ The Azure trial ends **mid-December 2026**, so the live Azure parts must be **do
    Key Vault for the ServiceNow login (section 6).
 5. **Expiry:** reminder 3 days before. At expiry, the resource is deleted once the owner confirms, or after a 2-day
    grace period with no reply. Every deletion is recorded as a standard change.
-6. **Before P1:** check the remaining trial credit (Azure portal → Subscriptions → Cost analysis / Credits).
+6. **Change record (changed 2026-11-20):** each build is recorded with the PDI's **Change Registration** model
+   ("a record of an automated change", no approvals) instead of a standard change, which would need a hand-built
+   template. The model keeps its own short description and group; the request number is in `correlation_display`.
+7. **Polling (changed 2026-11-20):** hourly, plus on demand (`az automation runbook start`), not every 5 minutes.
+   Automation schedules cannot run more often than hourly, and 15-minute runs would exceed the free job minutes.
+8. **The worker only builds what the agent recommended.** A person's approval of a request the validation agent
+   flagged reject or needs-information is not built ("blocked"); every value is re-checked against the policy
+   before deploying, and Azure Policy checks again.
+9. **Before P1:** check the remaining trial credit (Azure portal → Subscriptions → Cost analysis / Credits).

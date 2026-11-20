@@ -49,7 +49,8 @@ def main() -> None:
     for req in pending:
         r = agent.run(req)
         cost = "" if r.monthly_cost_usd is None else f"{r.monthly_cost_usd:.2f}"
-        src.write(req, {"u_ai_recommendation": r.decision, "u_ai_monthly_cost": cost}, r.note)
+        src.write(req, {"u_ai_recommendation": r.decision, "u_ai_monthly_cost": cost,
+                        "u_ai_changes": json.dumps(r.changes, sort_keys=True) if r.changes else ""}, r.note)
         results.append(r)
         if a.verbose:
             print(f"\n=== {r.key} {r.item}\n{r.note}")

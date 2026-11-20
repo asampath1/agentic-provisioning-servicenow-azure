@@ -65,3 +65,29 @@ az keyvault purge --name <vault name>             # soft-deleted vault (7-day re
 az role definition list --custom-role-only true --query "[?contains(roleName,'SKR Provisioning')].name" -o tsv \
   | xargs -I{} az role definition delete --name {}
 ```
+
+## Provisioning worker (P4)
+
+`runbooks/RB-Provision-Requests.ps1` runs in the Automation account `aa-skr-prov` (PowerShell 7.2, system-assigned
+managed identity). It pulls approved SKR Cloud requests from ServiceNow and builds them:
+
+1. Picks requested items with `u_cloud_approval = approved` and no provisioning state.
+2. Builds only if the validation agent recommended approve or approve with changes; otherwise marks it `blocked`.
+3. Applies the agent's changes (`u_ai_changes`), re-checks every value against the policy, claims the item
+   (`deploying`), deploys the Template Spec version into `rg-skr-prov-sandbox`.
+4. Writes back `succeeded` / `failed`, the resource ID and a work note, closes the item, and records a change
+   (model Change Registration).
+
+The ServiceNow login comes from Key Vault; nothing secret is in the script or in ServiceNow.
+
+```bash
+infra/publish-runbooks.sh                                   # upload + publish after editing the .ps1
+az automation runbook start -g rg-skr-prov-platform --automation-account-name aa-skr-prov \
+  -n RB-Provision-Requests                                  # build now (add --parameters DryRun=true to preview)
+az automation runbook start ... --parameters RetryFailed=true   # also retry builds that failed
+pwsh infra/runbooks/RB-Provision-Requests.ps1 -DryRun       # preview from a laptop (SN_* variables set)
+```
+
+First real run (2026-11-20, RITM0010005): Azure refused the first attempt with **AllocationFailed** (no B2ats_v2
+capacity in Central India at that moment); the worker marked the request `failed` with Azure's message, and the
+retry built `vm-test-ritm0010005` a few minutes later. There is no schedule yet; it is started by hand until the demo.

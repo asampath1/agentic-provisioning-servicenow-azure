@@ -26,4 +26,7 @@ v1.0, never edit) and `../agentic-change-management-servicenow`.
 - Tests: `.venv/bin/python -m pytest -q` (the repo has its own .venv: requests, pytest, anthropic).
 - P3: `python -m agents --out runs/latest && python -m evaluation.score runs/latest` (validation agent, policy in
   `docs/request-policy.md`); `--reasoner claude` reads rule 7 text with Claude; `--source servicenow [--write]`.
+  P4 worker: `infra/runbooks/RB-Provision-Requests.ps1` (publish with `infra/publish-runbooks.sh`, start with
+  `az automation runbook start ... [--parameters DryRun=true|RetryFailed=true]`); local logic checks in
+  `tests/runbook_checks.ps1` (pwsh). Change Registration keeps short_description/assignment_group read-only.
   After any generator change: `cd synthetic-data && python3 generate_requests.py` (test_dataset checks freshness).

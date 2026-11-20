@@ -42,6 +42,7 @@ def test_dry_run_writes_nothing(monkeypatch):
 
 def test_write_sets_only_ai_fields_and_note(monkeypatch):
     c = connector(monkeypatch, True)
-    c.write(c.pending()[0], {"u_ai_recommendation": "approve", "u_ai_monthly_cost": "6.18"}, "note")
+    c.write(c.pending()[0], {"u_ai_recommendation": "approve", "u_ai_monthly_cost": "6.18", "u_ai_changes": ""}, "note")
     (url, body), = c.s.patches
-    assert url.endswith("/sc_req_item/s1") and set(body) == {"u_ai_recommendation", "u_ai_monthly_cost", "work_notes"}
+    assert url.endswith("/sc_req_item/s1")
+    assert set(body) == {"u_ai_recommendation", "u_ai_monthly_cost", "u_ai_changes", "work_notes"}

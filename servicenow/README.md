@@ -13,6 +13,9 @@ python3 catalog.py --apply       # create / update
 python3 catalog.py --remove --apply   # take it all off again (the request fields stay)
 ```
 
+`close_requests.py RITM... --reason "..." [--apply]` closes requests that must never be built (state Closed
+Incomplete, `u_provisioning_state = cancelled`).
+
 ## What it creates
 
 | Record | Details |
