@@ -13,8 +13,10 @@ targetScope = 'subscription'
 @description('Region for the resource groups, Key Vault, Template Specs and requested resources.')
 param location string = 'centralindia'
 
-@description('The trial cannot create Automation accounts in Central India (found in v1).')
-param automationLocation string = 'southeastasia'
+// Free trials may create Automation accounts only in eastus, eastus2, westus, northeurope, southeastasia and japanwest,
+// one per region; southeastasia is still held by the deleted v1 account, so Japan West.
+@description('Region for the Automation account (the worker).')
+param automationLocation string = 'japanwest'
 
 @description('Object ID of the admin who may write Key Vault secrets (az ad signed-in-user show --query id -o tsv).')
 param adminObjectId string

@@ -8,8 +8,9 @@ Vault**. Expired resources are cleaned up, and anything created outside the proc
 > **Disclaimer:** *ShopKart Retails (SKR)* is a fictional company. All people, requests and records are synthetic.
 > No client or employer data is used.
 
-> **Status: starting.** Design agreed: [docs/design.md](docs/design.md). The live Azure parts must be finished before
-> the Azure trial ends (mid-December 2026).
+> **Status: in progress.** P1 (Azure platform: Key Vault, worker identity, Template Specs, Policy) deployed
+> 2026-11-19. P2 (ServiceNow catalog items and approval flow, [details](servicenow/README.md)) done 2026-11-20. Design: [docs/design.md](docs/design.md). The live Azure parts must be finished before the Azure trial ends
+> (15 December 2026). Infrastructure: [infra/README.md](infra/README.md).
 
 Part of a series on agentic IT operations with ServiceNow:
 [incident triage and auto-remediation](https://github.com/asampath1/agentic-aiops-servicenow-azure) ·

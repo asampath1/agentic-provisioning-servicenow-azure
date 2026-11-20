@@ -19,7 +19,8 @@ v1.0, never edit) and `../agentic-change-management-servicenow`.
 ## Environment (from the earlier projects)
 - ServiceNow PDI dev467960; API user `svc.aiops.loader`. Live ServiceNow commands run in the user's VS Code
   terminal (this shell's SN_PASSWORD is stale); I read the files they write.
-- Azure: `az login --use-device-code` works from this shell; free trial, region Central India; Automation accounts
-  had to go in Southeast Asia; B2ats_v2 / B2als_v2 VM sizes work (non-zonal). If `az` hangs, check IPv6.
-- `servicenow/load_to_snow.py` is the loader from the change-management project (reuses existing records by name,
-  dry-run mode); it will be extended for catalog items.
+- Azure: `az login --use-device-code` works from this shell; free trial, region Central India; Automation accounts: trials
+  allow only eastus/eastus2/westus/northeurope/southeastasia/japanwest, one per region (this project: japanwest); B2ats_v2 / B2als_v2 VM sizes work (non-zonal). If `az` hangs, check IPv6.
+- `servicenow/catalog.py` (P2) creates the catalog items, approver group, request fields and approval business
+  rules from `catalog_definition.py`; read-only unless `--apply`. It reuses the `Snow` client from `load_to_snow.py`.
+- Tests: `.venv/bin/python -m pytest -q` (the repo has its own .venv: requests, pytest).

@@ -98,7 +98,7 @@ login, but the webhook URL becomes a secret in ServiceNow. The write-up will cov
 
 | Option | Pros | Cons |
 |---|---|---|
-| **A. Azure Automation runbook** on a schedule (polls approved RITMs every 5 min) | Proven on this trial in v1 (Southeast Asia); managed identity; Key Vault access built in | PowerShell; polling delay |
+| **A. Azure Automation runbook** on a schedule (polls approved RITMs every 5 min) | Proven on this trial in v1 (here in Japan West: trials allow six regions, one account each); managed identity; Key Vault access built in | PowerShell; polling delay |
 | B. Logic App (consumption) | Proven in v1; has ServiceNow and ARM connectors; visual run history for demos | Logic in JSON; harder to test |
 | C. Python worker run locally (like the agents) | Simplest; same language as the agents | Not "real" automation; needs my login |
 
@@ -125,8 +125,8 @@ The Azure trial ends **mid-December 2026**, so the live Azure parts must be **do
 
 | # | Deliverable | Needs |
 |---|---|---|
-| P1 | Bicep templates + Template Specs + Policy + Key Vault + worker identity (`infra/`), deployed and torn down cleanly | Azure |
-| P2 | ServiceNow catalog items and variables on the PDI (loader script, like the other projects) | PDI |
+| P1 | Bicep templates + Template Specs + Policy + Key Vault + worker identity (`infra/`). **Deployed 2026-11-19** | Azure |
+| P2 | ServiceNow catalog items, variables, approver group and approval rules on the PDI (`servicenow/catalog.py`, [details](../servicenow/README.md)). **Done 2026-11-20**: verified with a request ordered as a synthetic employee and approved by the cloud team | PDI |
 | P3 | Validation agent + synthetic request set + scoring | offline |
 | P4 | Provisioning worker: approved RITM → Template Spec deployment → standard change + RITM update | Azure + PDI |
 | P5 | Expiry and drift agents | Azure + PDI |

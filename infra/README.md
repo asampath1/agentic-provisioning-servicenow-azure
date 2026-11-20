@@ -9,7 +9,8 @@
 
 ## Resource groups
 
-- **`rg-skr-prov-platform`** (Central India; Automation in Southeast Asia, since the trial can't create it in Central India)
+- **`rg-skr-prov-platform`** (Central India; the Automation account is in Japan West, because free trials can create
+  Automation only in six regions, one account per region, and Southeast Asia is still held by v1's deleted account)
   - Key Vault: `snow-instance`, `snow-user` and `snow-password` for the ServiceNow API user, added by hand
   - Template Specs: `vm-linux-test` and `storage-account`, versioned
   - Automation account `aa-skr-prov`: the worker
