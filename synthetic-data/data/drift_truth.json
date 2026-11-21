@@ -1,0 +1,208 @@
+[
+ {
+  "key": "RITM0010103",
+  "problems": [],
+  "scenario": "clean VM"
+ },
+ {
+  "key": "RITM0010107",
+  "problems": [],
+  "scenario": "clean VM"
+ },
+ {
+  "key": "RITM0010109",
+  "problems": [],
+  "scenario": "clean VM"
+ },
+ {
+  "key": "RITM0010113",
+  "problems": [],
+  "scenario": "clean VM"
+ },
+ {
+  "key": "RITM0010114",
+  "problems": [],
+  "scenario": "clean VM"
+ },
+ {
+  "key": "RITM0010116",
+  "problems": [],
+  "scenario": "clean VM"
+ },
+ {
+  "key": "RITM0010118",
+  "problems": [],
+  "scenario": "clean storage account"
+ },
+ {
+  "key": "RITM0010119",
+  "problems": [],
+  "scenario": "clean storage account"
+ },
+ {
+  "key": "RITM0010121",
+  "problems": [],
+  "scenario": "clean storage account"
+ },
+ {
+  "key": "RITM0010122",
+  "problems": [],
+  "scenario": "clean storage account"
+ },
+ {
+  "key": "RITM0010124",
+  "problems": [],
+  "scenario": "clean: the agent's size change was applied"
+ },
+ {
+  "key": "RITM0010127",
+  "problems": [],
+  "scenario": "clean: the agent's redundancy change was applied"
+ },
+ {
+  "key": "RITM0010129",
+  "problems": [],
+  "scenario": "clean: tag names in other letter case"
+ },
+ {
+  "key": "RITM0010132",
+  "problems": [],
+  "scenario": "clean: request id in lower case"
+ },
+ {
+  "key": "RITM0010136",
+  "problems": [],
+  "scenario": "clean: expired, still inside the grace period"
+ },
+ {
+  "key": "RITM0010139",
+  "problems": [],
+  "scenario": "clean: deleted on expiry, nothing left"
+ },
+ {
+  "key": "stadhoctest01",
+  "problems": [
+   "no_request_tag"
+  ],
+  "scenario": "storage account without any request tag"
+ },
+ {
+  "key": "vm-old-demo-osdisk",
+  "problems": [
+   "no_request_tag"
+  ],
+  "scenario": "leftover disk, no tags"
+ },
+ {
+  "key": "RITM9999001",
+  "problems": [
+   "unknown_request"
+  ],
+  "scenario": "portal deployment with a made-up request id"
+ },
+ {
+  "key": "RITM9999002",
+  "problems": [
+   "unknown_request"
+  ],
+  "scenario": "portal VM with a made-up request id"
+ },
+ {
+  "key": "RITM0010146",
+  "problems": [
+   "not_approved"
+  ],
+  "scenario": "built from the portal before approval"
+ },
+ {
+  "key": "RITM0010149",
+  "problems": [
+   "not_approved"
+  ],
+  "scenario": "built from the portal although rejected"
+ },
+ {
+  "key": "RITM0010153",
+  "problems": [
+   "request_closed"
+  ],
+  "scenario": "request cancelled, VM exists"
+ },
+ {
+  "key": "RITM0010156",
+  "problems": [
+   "request_closed"
+  ],
+  "scenario": "request says deleted, storage account still there"
+ },
+ {
+  "key": "RITM0010160",
+  "problems": [
+   "outside_worker"
+  ],
+  "scenario": "approved, built from the portal: the worker would build it again"
+ },
+ {
+  "key": "RITM0010163",
+  "problems": [
+   "expired"
+  ],
+  "scenario": "past expiry and grace, not deleted"
+ },
+ {
+  "key": "RITM0010167",
+  "problems": [
+   "expired"
+  ],
+  "scenario": "past expiry and grace, owner never asked"
+ },
+ {
+  "key": "RITM0010169",
+  "problems": [
+   "differs_from_request"
+  ],
+  "scenario": "resized after the build"
+ },
+ {
+  "key": "RITM0010173",
+  "problems": [
+   "differs_from_request"
+  ],
+  "scenario": "size neither requested nor approved"
+ },
+ {
+  "key": "RITM0010176",
+  "problems": [
+   "differs_from_request"
+  ],
+  "scenario": "expires-on tag extended by hand"
+ },
+ {
+  "key": "RITM0010179",
+  "problems": [
+   "differs_from_request"
+  ],
+  "scenario": "a VM carries a storage account request"
+ },
+ {
+  "key": "RITM0010183",
+  "problems": [
+   "no_expiry_tag"
+  ],
+  "scenario": "VM without an expiry date (tag emptied)"
+ },
+ {
+  "key": "RITM0010186",
+  "problems": [
+   "missing"
+  ],
+  "scenario": "request says built, VM deleted by hand"
+ },
+ {
+  "key": "RITM0010189",
+  "problems": [
+   "missing"
+  ],
+  "scenario": "request says built, storage account gone"
+ }
+]

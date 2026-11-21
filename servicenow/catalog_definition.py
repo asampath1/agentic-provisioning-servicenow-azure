@@ -82,8 +82,9 @@ RITM_FIELDS = [
     ("u_ai_recommendation", "AI recommendation", 40),     # approve | approve_with_changes | reject | need_info
     ("u_ai_monthly_cost", "AI monthly cost estimate (USD)", 20),
     ("u_ai_changes", "AI recommended changes (JSON)", 255),  # e.g. {"vm_size": "Standard_B2als_v2"}; the worker applies them
-    ("u_provisioning_state", "Provisioning state", 40),   # deploying | succeeded | failed | deleted
+    ("u_provisioning_state", "Provisioning state", 40),   # deploying | succeeded | failed | blocked | cancelled | deleted
     ("u_azure_resource_id", "Azure resource ID", 255),
+    ("u_expiry_state", "Expiry state", 20),               # reminded | expired | deleted: the expiry worker's step
 ]
 
 BUSINESS_RULES = [

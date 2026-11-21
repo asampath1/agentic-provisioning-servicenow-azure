@@ -18,3 +18,18 @@ python -m agents --source servicenow --write            # posts the work note an
 **Guardrails.** The agent only recommends. On ServiceNow it writes a work note and `u_ai_recommendation` /
 `u_ai_monthly_cost`, never the approval or the request state, and only with `--write`. A private key pasted into a
 request is flagged for rejection and the note tells the requester to replace that key pair.
+
+## Drift agent (P5)
+
+```bash
+python -m agents.drift --out runs/drift && python -m evaluation.score_drift runs/drift   # synthetic inventory
+python -m agents.drift --source live --out runs/drift-live    # az login + SN_* variables; report only
+python -m agents.drift --source live --write                  # also opens or updates one ServiceNow incident
+```
+
+`drift.py` groups the sandbox's resources by their `request-id` tag and compares each group with the request in
+ServiceNow: unknown or unapproved requests, cancelled or deleted requests whose resources still exist, approved
+requests built outside the worker (the worker would build them again), resources past expiry and grace, and size,
+redundancy, item type or expiry that differ from the approved request (after the validation agent's changes).
+Untagged resources are reported one by one; requests that say "built" with nothing in Azure are reported as missing.
+It never deletes or changes anything in Azure. Live inventory: `connectors/azure_inventory.py` (az CLI, read-only).

@@ -91,3 +91,24 @@ pwsh infra/runbooks/RB-Provision-Requests.ps1 -DryRun       # preview from a lap
 First real run (2026-11-20, RITM0010005): Azure refused the first attempt with **AllocationFailed** (no B2ats_v2
 capacity in Central India at that moment); the worker marked the request `failed` with Azure's message, and the
 retry built `vm-test-ritm0010005` a few minutes later. There is no schedule yet; it is started by hand until the demo.
+
+## Expiry worker (P5)
+
+`runbooks/RB-Expire-Resources.ps1` runs in the same Automation account with the same identity. It reads the
+`request-id` and `expires-on` tags of every VM and storage account in the sandbox and takes at most one step per
+request per run, kept in `u_expiry_state` on the request item:
+
+| Step | When | What |
+|---|---|---|
+| remind | `ReminderDays` before `expires-on` (default 3) | Comment to the requester (visible in the portal) + work note |
+| expire | on `expires-on` | An approval for the requester: "Delete ...? Approve to delete it now" |
+| delete | the requester approved, or `GraceDays` after `expires-on` (default 2) with no approval | Deletes the VM (its disk and NIC go with it, `deleteOption: Delete`) and its auto-shutdown schedule, or the storage account; records a change (Change Registration); `u_provisioning_state = deleted` |
+
+Nothing is deleted before the requester was asked: a resource found long after its expiry is asked first and
+deleted on a later run. A rejected deletion approval does not extend anything (extensions are out of scope); the
+grace period still applies. The worker deletes only in the sandbox resource group, within its custom role.
+
+```bash
+az automation runbook start -g rg-skr-prov-platform --automation-account-name aa-skr-prov \
+  -n RB-Expire-Resources --parameters ReminderDays=1 GraceDays=1        # add DryRun=true AsOf=2026-11-22 to preview
+```

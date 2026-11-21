@@ -18,3 +18,8 @@ class LocalRequests:
         if self.outbox:
             with open(self.outbox, "a", encoding="utf-8") as f:
                 f.write(json.dumps({"request": req["key"], "fields": fields, "work_note": note}) + "\n")
+
+
+def local_inventory() -> dict:
+    """The drift agent's offline input: synthetic sandbox resources and ServiceNow requests (synthetic-data/data)."""
+    return json.loads((DATA / "inventory.json").read_text())

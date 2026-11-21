@@ -1,0 +1,1284 @@
+{
+ "as_of": "2026-11-25",
+ "grace_days": 2,
+ "resources": [
+  {
+   "name": "vm-test-ritm0010124-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010124",
+    "expires-on": "2026-12-03",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010183",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010183",
+    "expires-on": "",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "stskrritm0010132",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "request-id": "ritm0010132",
+    "expires-on": "2026-11-28",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   },
+   "sku": "Standard_LRS"
+  },
+  {
+   "name": "vm-test-ritm0010179-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010179",
+    "expires-on": "2026-12-07",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010169",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010169",
+    "expires-on": "2026-12-01",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2als_v2"
+  },
+  {
+   "name": "vm-test-ritm0010160-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010160",
+    "expires-on": "2026-11-28",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010113",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010113",
+    "expires-on": "2026-12-05",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "vm-test-ritm0010113-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010113",
+    "expires-on": "2026-12-05",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010114",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010114",
+    "expires-on": "2026-12-05",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "vm-test-ritm0010179",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010179",
+    "expires-on": "2026-12-07",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010114",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010114",
+    "expires-on": "2026-12-05",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010163",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010163",
+    "expires-on": "2026-11-20",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "vm-test-ritm0010129-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "Request-ID": "RITM0010129",
+    "Expires-On": "2026-12-04",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "stadhoctest01",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "owner": "synth.ajay.garcia"
+   },
+   "sku": "Standard_LRS"
+  },
+  {
+   "name": "vm-test-ritm0010153",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010153",
+    "expires-on": "2026-12-03",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "vm-test-ritm0010107-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010107",
+    "expires-on": "2026-12-05",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010169-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010169",
+    "expires-on": "2026-12-01",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-portal-test",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM9999002",
+    "expires-on": "2026-12-02",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010163-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010163",
+    "expires-on": "2026-11-20",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010109",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010109",
+    "expires-on": "2026-12-01",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010107",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010107",
+    "expires-on": "2026-12-05",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010153",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010153",
+    "expires-on": "2026-12-03",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "stportaltest01",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "request-id": "RITM9999001",
+    "expires-on": "2026-12-02",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   },
+   "sku": "Standard_LRS"
+  },
+  {
+   "name": "vm-test-ritm0010124",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010124",
+    "expires-on": "2026-12-03",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2als_v2"
+  },
+  {
+   "name": "vm-test-ritm0010173-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010173",
+    "expires-on": "2026-12-09",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010163-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010163",
+    "expires-on": "2026-11-20",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010169-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010169",
+    "expires-on": "2026-12-01",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010153-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010153",
+    "expires-on": "2026-12-03",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-portal-test",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM9999002",
+    "expires-on": "2026-12-02",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "vm-test-ritm0010103-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010103",
+    "expires-on": "2026-12-09",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "stskrritm0010167",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "request-id": "RITM0010167",
+    "expires-on": "2026-11-22",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   },
+   "sku": "Standard_LRS"
+  },
+  {
+   "name": "vm-test-ritm0010116-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010116",
+    "expires-on": "2026-12-11",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010114-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010114",
+    "expires-on": "2026-12-05",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "stskrritm0010121",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "request-id": "RITM0010121",
+    "expires-on": "2026-12-02",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   },
+   "sku": "Standard_LRS"
+  },
+  {
+   "name": "vm-test-ritm0010113-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010113",
+    "expires-on": "2026-12-05",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010136",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010136",
+    "expires-on": "2026-11-24",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010103",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010103",
+    "expires-on": "2026-12-09",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "vm-test-ritm0010136",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010136",
+    "expires-on": "2026-11-24",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "vm-test-ritm0010129-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "Request-ID": "RITM0010129",
+    "Expires-On": "2026-12-04",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010124",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010124",
+    "expires-on": "2026-12-03",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010146",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010146",
+    "expires-on": "2026-12-07",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "vm-test-ritm0010124-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010124",
+    "expires-on": "2026-12-03",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010173",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010173",
+    "expires-on": "2026-12-09",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010136-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010136",
+    "expires-on": "2026-11-24",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010153-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010153",
+    "expires-on": "2026-12-03",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010129",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "Request-ID": "RITM0010129",
+    "Expires-On": "2026-12-04",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010169",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010169",
+    "expires-on": "2026-12-01",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010146",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010146",
+    "expires-on": "2026-12-07",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "stskrritm0010176",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "request-id": "RITM0010176",
+    "expires-on": "2027-01-11",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   },
+   "sku": "Standard_LRS"
+  },
+  {
+   "name": "vm-test-ritm0010183-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010183",
+    "expires-on": "",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010160",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010160",
+    "expires-on": "2026-11-28",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010163",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010163",
+    "expires-on": "2026-11-20",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-portal-test-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM9999002",
+    "expires-on": "2026-12-02",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010107-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010107",
+    "expires-on": "2026-12-05",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-old-demo-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {}
+  },
+  {
+   "name": "stskrritm0010122",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "request-id": "RITM0010122",
+    "expires-on": "2026-12-04",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   },
+   "sku": "Standard_LRS"
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010113",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010113",
+    "expires-on": "2026-12-05",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "stskrritm0010156",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "request-id": "RITM0010156",
+    "expires-on": "2026-11-28",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   },
+   "sku": "Standard_LRS"
+  },
+  {
+   "name": "stskrritm0010119",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "request-id": "RITM0010119",
+    "expires-on": "2026-12-02",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   },
+   "sku": "Standard_LRS"
+  },
+  {
+   "name": "vm-test-ritm0010146-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010146",
+    "expires-on": "2026-12-07",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010116-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010116",
+    "expires-on": "2026-12-11",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010107",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010107",
+    "expires-on": "2026-12-05",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "vm-test-ritm0010116",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010116",
+    "expires-on": "2026-12-11",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "stskrritm0010149",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "request-id": "RITM0010149",
+    "expires-on": "2026-12-03",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   },
+   "sku": "Standard_LRS"
+  },
+  {
+   "name": "vm-test-ritm0010109-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010109",
+    "expires-on": "2026-12-01",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010179-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010179",
+    "expires-on": "2026-12-07",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010116",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010116",
+    "expires-on": "2026-12-11",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010109",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010109",
+    "expires-on": "2026-12-01",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010146-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010146",
+    "expires-on": "2026-12-07",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "stskrritm0010118",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "request-id": "RITM0010118",
+    "expires-on": "2026-12-10",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   },
+   "sku": "Standard_LRS"
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010179",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010179",
+    "expires-on": "2026-12-07",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010129",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "Request-ID": "RITM0010129",
+    "Expires-On": "2026-12-04",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "vm-test-ritm0010103-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010103",
+    "expires-on": "2026-12-09",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010136-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010136",
+    "expires-on": "2026-11-24",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-portal-test-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM9999002",
+    "expires-on": "2026-12-02",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010160",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010160",
+    "expires-on": "2026-11-28",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2ats_v2"
+  },
+  {
+   "name": "vm-test-ritm0010173-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010173",
+    "expires-on": "2026-12-09",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010114-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010114",
+    "expires-on": "2026-12-05",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vnet-skr-sandbox",
+   "type": "Microsoft.Network/virtualNetworks",
+   "tags": {
+    "request-id": "platform",
+    "expires-on": "never"
+   }
+  },
+  {
+   "name": "shutdown-computevm-vm-test-ritm0010103",
+   "type": "Microsoft.DevTestLab/schedules",
+   "tags": {
+    "request-id": "RITM0010103",
+    "expires-on": "2026-12-09",
+    "owner": "synth.aditya.banerjee",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "stskrritm0010127",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "request-id": "RITM0010127",
+    "expires-on": "2026-12-04",
+    "owner": "synth.ajay.fernandes",
+    "managed-by": "skr-provisioning"
+   },
+   "sku": "Standard_LRS"
+  },
+  {
+   "name": "vm-test-ritm0010160-osdisk",
+   "type": "Microsoft.Compute/disks",
+   "tags": {
+    "request-id": "RITM0010160",
+    "expires-on": "2026-11-28",
+    "owner": "synth.ajay.mishra",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010109-nic",
+   "type": "Microsoft.Network/networkInterfaces",
+   "tags": {
+    "request-id": "RITM0010109",
+    "expires-on": "2026-12-01",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   }
+  },
+  {
+   "name": "vm-test-ritm0010173",
+   "type": "Microsoft.Compute/virtualMachines",
+   "tags": {
+    "request-id": "RITM0010173",
+    "expires-on": "2026-12-09",
+    "owner": "synth.ajay.garcia",
+    "managed-by": "skr-provisioning"
+   },
+   "size": "Standard_B2als_v2"
+  }
+ ],
+ "requests": [
+  {
+   "number": "RITM0010186",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-14",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010103",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-09",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010142",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "requested",
+   "u_provisioning_state": "",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-07",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010179",
+   "item": "Azure storage account",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-07",
+    "redundancy": "Standard_LRS"
+   }
+  },
+  {
+   "number": "RITM0010146",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "requested",
+   "u_provisioning_state": "",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-07",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010169",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-01",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010124",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "{\"vm_size\": \"Standard_B2als_v2\"}",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-03",
+    "vm_size": "Standard_D4s_v5"
+   }
+  },
+  {
+   "number": "RITM0010189",
+   "item": "Azure storage account",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "reminded",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-02",
+    "redundancy": "Standard_LRS"
+   }
+  },
+  {
+   "number": "RITM0010127",
+   "item": "Azure storage account",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "{\"redundancy\": \"Standard_LRS\"}",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-04",
+    "redundancy": "Standard_GRS"
+   }
+  },
+  {
+   "number": "RITM0010183",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-11-30",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010163",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "expired",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-11-20",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010118",
+   "item": "Azure storage account",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-10",
+    "redundancy": "Standard_LRS"
+   }
+  },
+  {
+   "number": "RITM0010121",
+   "item": "Azure storage account",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-02",
+    "redundancy": "Standard_LRS"
+   }
+  },
+  {
+   "number": "RITM0010173",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "{\"vm_size\": \"Standard_B2ats_v2\"}",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-09",
+    "vm_size": "Standard_D2s_v5"
+   }
+  },
+  {
+   "number": "RITM0010176",
+   "item": "Azure storage account",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-12",
+    "redundancy": "Standard_LRS"
+   }
+  },
+  {
+   "number": "RITM0010160",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-11-28",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010143",
+   "item": "Azure storage account",
+   "u_cloud_approval": "rejected",
+   "u_provisioning_state": "",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-08",
+    "redundancy": "Standard_LRS"
+   }
+  },
+  {
+   "number": "RITM0010153",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "cancelled",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-03",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010109",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-01",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010119",
+   "item": "Azure storage account",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-02",
+    "redundancy": "Standard_LRS"
+   }
+  },
+  {
+   "number": "RITM0010136",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "expired",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-11-24",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010113",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-05",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010129",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-04",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010149",
+   "item": "Azure storage account",
+   "u_cloud_approval": "rejected",
+   "u_provisioning_state": "",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-03",
+    "redundancy": "Standard_LRS"
+   }
+  },
+  {
+   "number": "RITM0010132",
+   "item": "Azure storage account",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-11-28",
+    "redundancy": "Standard_LRS"
+   }
+  },
+  {
+   "number": "RITM0010116",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-11",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010107",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-05",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010139",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "deleted",
+   "u_expiry_state": "deleted",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-11-20",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010156",
+   "item": "Azure storage account",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "deleted",
+   "u_expiry_state": "deleted",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-11-28",
+    "redundancy": "Standard_LRS"
+   }
+  },
+  {
+   "number": "RITM0010114",
+   "item": "Azure Linux test VM",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-05",
+    "vm_size": "Standard_B2ats_v2"
+   }
+  },
+  {
+   "number": "RITM0010122",
+   "item": "Azure storage account",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-12-04",
+    "redundancy": "Standard_LRS"
+   }
+  },
+  {
+   "number": "RITM0010167",
+   "item": "Azure storage account",
+   "u_cloud_approval": "approved",
+   "u_provisioning_state": "succeeded",
+   "u_expiry_state": "reminded",
+   "u_ai_changes": "",
+   "variables": {
+    "purpose": "synthetic test workload",
+    "expires_on": "2026-11-22",
+    "redundancy": "Standard_LRS"
+   }
+  }
+ ]
+}

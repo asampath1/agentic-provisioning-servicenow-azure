@@ -1,0 +1,110 @@
+[
+ {
+  "key": "stadhoctest01",
+  "problems": [
+   "no_request_tag"
+  ]
+ },
+ {
+  "key": "vm-old-demo-osdisk",
+  "problems": [
+   "no_request_tag"
+  ]
+ },
+ {
+  "key": "RITM0010146",
+  "problems": [
+   "not_approved"
+  ]
+ },
+ {
+  "key": "RITM0010149",
+  "problems": [
+   "not_approved"
+  ]
+ },
+ {
+  "key": "RITM0010153",
+  "problems": [
+   "request_closed"
+  ]
+ },
+ {
+  "key": "RITM0010156",
+  "problems": [
+   "request_closed"
+  ]
+ },
+ {
+  "key": "RITM0010160",
+  "problems": [
+   "outside_worker"
+  ]
+ },
+ {
+  "key": "RITM0010163",
+  "problems": [
+   "expired"
+  ]
+ },
+ {
+  "key": "RITM0010167",
+  "problems": [
+   "expired"
+  ]
+ },
+ {
+  "key": "RITM0010169",
+  "problems": [
+   "differs_from_request"
+  ]
+ },
+ {
+  "key": "RITM0010173",
+  "problems": [
+   "differs_from_request"
+  ]
+ },
+ {
+  "key": "RITM0010176",
+  "problems": [
+   "differs_from_request"
+  ]
+ },
+ {
+  "key": "RITM0010179",
+  "problems": [
+   "differs_from_request"
+  ]
+ },
+ {
+  "key": "RITM0010183",
+  "problems": [
+   "no_expiry_tag"
+  ]
+ },
+ {
+  "key": "RITM9999001",
+  "problems": [
+   "unknown_request"
+  ]
+ },
+ {
+  "key": "RITM9999002",
+  "problems": [
+   "unknown_request"
+  ]
+ },
+ {
+  "key": "RITM0010186",
+  "problems": [
+   "missing"
+  ]
+ },
+ {
+  "key": "RITM0010189",
+  "problems": [
+   "missing"
+  ]
+ }
+]

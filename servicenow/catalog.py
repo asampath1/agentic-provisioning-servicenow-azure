@@ -121,7 +121,8 @@ class Catalog:
 
         c = self.counts
         verb = "Done" if self.apply else "Plan (read-only; add --apply to write)"
-        print(f"\n{verb}: {c['create']} to create, {c['update']} to update, {c['ok']} already right.")
+        done = ("created", "updated") if self.apply else ("to create", "to update")
+        print(f"\n{verb}: {c['create']} {done[0]}, {c['update']} {done[1]}, {c['ok']} already right.")
 
     def remove(self):
         """Delete in reverse dependency order. The sc_req_item fields are kept (they may hold request data)."""

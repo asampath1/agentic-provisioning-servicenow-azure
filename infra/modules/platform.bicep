@@ -75,6 +75,20 @@ resource provisionRunbook 'Microsoft.Automation/automationAccounts/runbooks@2023
   }
 }
 
+// The expiry worker (P5): reminder, deletion approval for the requester, deletion + change record. Same identity.
+resource expiryRunbook 'Microsoft.Automation/automationAccounts/runbooks@2023-11-01' = {
+  parent: aa
+  name: 'RB-Expire-Resources'
+  location: automationLocation
+  tags: tags
+  properties: {
+    runbookType: 'PowerShell72'
+    logProgress: false
+    logVerbose: false
+    description: 'Reminds, asks the requester, then deletes expired SKR sandbox resources and records a change. SYNTH-SKR-PROV'
+  }
+}
+
 // Worker may READ secrets in this vault (not write or delete them).
 resource workerSecrets 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   name: guid(kv.id, aa.id, roles.keyVaultSecretsUser)

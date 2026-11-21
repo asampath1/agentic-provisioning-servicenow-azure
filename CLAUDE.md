@@ -30,3 +30,8 @@ v1.0, never edit) and `../agentic-change-management-servicenow`.
   `az automation runbook start ... [--parameters DryRun=true|RetryFailed=true]`); local logic checks in
   `tests/runbook_checks.ps1` (pwsh). Change Registration keeps short_description/assignment_group read-only.
   After any generator change: `cd synthetic-data && python3 generate_requests.py` (test_dataset checks freshness).
+- P5: expiry worker `infra/runbooks/RB-Expire-Resources.ps1` (remind -> deletion approval for the requester ->
+  delete + change; state in `u_expiry_state`; `-AsOf`, `-ReminderDays` 3, `-GraceDays` 2; checks in
+  `tests/expiry_checks.ps1`). Drift agent `python -m agents.drift [--source live [--write]]`, scored by
+  `python -m evaluation.score_drift runs/drift` against `drift_truth.json` (agents never read it); regenerate with
+  `cd synthetic-data && python3 generate_inventory.py`. `servicenow/set_expiry.py` changes a request's expiry.

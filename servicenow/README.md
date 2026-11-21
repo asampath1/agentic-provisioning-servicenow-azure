@@ -24,7 +24,7 @@ Incomplete, `u_provisioning_state = cancelled`).
 | Item **Azure Linux test VM** | purpose, size, SSH public key, expiry date, justification. Built from Template Spec `vm-linux-test` |
 | Item **Azure storage account** | purpose, redundancy, data classification, expiry date, justification. Built from Template Spec `storage-account` |
 | Group **SKR Cloud Platform** | the approvers (the PDI `admin` for the demo) |
-| Request fields | `u_cloud_approval` (the approval gate), `u_ai_recommendation`, `u_ai_monthly_cost` (validation agent, P3); `u_provisioning_state`, `u_azure_resource_id` (worker, P4) |
+| Request fields | `u_cloud_approval` (the approval gate), `u_ai_recommendation`, `u_ai_monthly_cost` (validation agent, P3); `u_provisioning_state`, `u_azure_resource_id` (worker, P4); `u_expiry_state` (expiry worker, P5) |
 | 4 business rules | the approval flow below; source in [`scripts/`](scripts/) |
 
 The size and redundancy lists include options the sandbox policy does not allow (D-series VMs, ZRS / GRS
@@ -51,3 +51,16 @@ field in line with it, and the worker builds only when `u_cloud_approval = appro
 I used business rules rather than a Flow Designer flow because a flow cannot be created cleanly over the API, and
 the PDI must be rebuildable from this repo. The PDI's approval engine for requested items is off, so nothing else
 creates approvals for these items. The rules contain no Azure call: ServiceNow never connects to Azure.
+
+## Changing an expiry date
+
+`set_expiry.py` changes a built request's `expires_on` variable, with a work note and a comment to the requester.
+The resources' `expires-on` tag is what the expiry worker acts on, so change both (the drift agent reports them if
+they differ):
+
+```bash
+python3 set_expiry.py RITM0010005 2026-11-23 --reason "shortened for the P5 expiry demo"          # plan
+python3 set_expiry.py RITM0010005 2026-11-23 --reason "shortened for the P5 expiry demo" --apply
+for id in $(az resource list -g rg-skr-prov-sandbox --query "[?tags.\"request-id\"=='RITM0010005'].id" -o tsv); do
+  az tag update --resource-id "$id" --operation Merge --tags expires-on=2026-11-23 -o none; done
+```
