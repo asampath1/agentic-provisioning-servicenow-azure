@@ -26,7 +26,7 @@ VM, ST = "Azure Linux test VM", "Azure storage account"
 class Builder:
     def __init__(self, rng):
         self.rng, self.n = rng, 10100
-        self.resources, self.requests, self.truth = [], [], []
+        self.resources, self.requests, self.truth, self.elsewhere = [], [], [], []
 
     def number(self):
         self.n += self.rng.randint(1, 4)
@@ -153,6 +153,10 @@ def build(seed: int) -> Builder:
     b.expect(num, ["missing"], "request says built, VM deleted by hand")
     num, _ = b.request(ST, redundancy="Standard_LRS", expiry_state="reminded")
     b.expect(num, ["missing"], "request says built, storage account gone")
+    b.elsewhere.append({"name": "stskrportal0001", "type": "Microsoft.Storage/storageAccounts",
+                        "tags": {"request-id": "RITM9999003", "expires-on": "2026-12-01"},
+                        "resource_group": "rg-skr-prov-platform"})
+    b.expect("stskrportal0001", ["outside_sandbox"], "portal deployment into the platform resource group")
     return b
 
 
@@ -166,7 +170,8 @@ def main() -> None:
     rng.shuffle(b.requests)
     data = HERE / "data"
     (data / "inventory.json").write_text(json.dumps(
-        {"as_of": AS_OF.isoformat(), "grace_days": GRACE, "resources": b.resources, "requests": b.requests}, indent=1))
+        {"as_of": AS_OF.isoformat(), "grace_days": GRACE, "resources": b.resources, "requests": b.requests,
+         "elsewhere": b.elsewhere}, indent=1))
     (data / "drift_truth.json").write_text(json.dumps(b.truth, indent=1))
     drift = sum(bool(t["problems"]) for t in b.truth)
     print(f"{len(b.resources)} resources, {len(b.requests)} requests; {len(b.truth)} keys scored, {drift} with drift.")

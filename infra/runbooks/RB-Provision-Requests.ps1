@@ -111,7 +111,7 @@ function New-ChangeRecord([hashtable]$Req, [hashtable]$Plan, [string]$ResourceId
     $group = (Get-Snow 'sys_user_group' 'name=SKR Cloud Platform' 'sys_id') | Select-Object -First 1
     $body = @{
         short_description = "Provisioned $($Plan.name) for $($Req.number) (SKR Cloud self-service)"
-        description = "Automated build by the SKR provisioning worker from Template Spec $($Plan.spec) $TemplateSpecVersion.`nRequest: $($Req.number)`nResource: $ResourceId"
+        description = "Automated build by the SKR provisioning worker from Template Spec $($Plan.spec) $TemplateSpecVersion.`nRequest: $($Req.number)`nResource: $($ResourceId -replace '^/subscriptions/[^/]+/resourceGroups/', '')"
         justification = "Approved catalog request $($Req.number)."
         correlation_id = 'SYNTH-SKR-PROV'; correlation_display = $Req.number
         start_date = $Start.ToUniversalTime().ToString('yyyy-MM-dd HH:mm:ss')

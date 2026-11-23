@@ -8,11 +8,13 @@ Vault**. Expired resources are cleaned up, and anything created outside the proc
 > **Disclaimer:** *ShopKart Retails (SKR)* is a fictional company. All people, requests and records are synthetic.
 > No client or employer data is used.
 
-> **Status: in progress.** P1 (Azure platform: Key Vault, worker identity, Template Specs, Policy) deployed
-> 2026-11-19. P2 (ServiceNow catalog items and approval flow, [details](servicenow/README.md)) and P3 (validation agent: 0 of
-> 17 wrong approvals with Claude, [results](evaluation/README.md)) and P4 (the provisioning worker: first VM built from a
-> ServiceNow request, [details](infra/README.md#provisioning-worker-p4)) done 2026-11-20. Design: [docs/design.md](docs/design.md). The live Azure parts must be finished before the Azure trial ends
-> (15 December 2026). Infrastructure: [infra/README.md](infra/README.md).
+> **Status: complete (live Azure parts until the trial ends, 15 December 2026).** One VM went from a ServiceNow
+> request to its deletion, live: validated, approved, built from a Template Spec, reminded, confirmed by the owner,
+> deleted, every step recorded ([live demo](docs/live-demo.md)). Validation agent: 0 of 17 wrong approvals with
+> Claude reading the text, 4 of 17 with rules only ([results](evaluation/README.md)). Drift agent: 0 of 19 missed on
+> a synthetic inventory, and a live portal deployment with a made-up request id caught. Plain-language summary:
+> [docs/overview.md](docs/overview.md). Design: [docs/design.md](docs/design.md). Infrastructure:
+> [infra/README.md](infra/README.md).
 
 Part of a series on agentic IT operations with ServiceNow:
 [incident triage and auto-remediation](https://github.com/asampath1/agentic-aiops-servicenow-azure) ·

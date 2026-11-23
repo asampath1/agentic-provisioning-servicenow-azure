@@ -32,4 +32,6 @@ ServiceNow: unknown or unapproved requests, cancelled or deleted requests whose 
 requests built outside the worker (the worker would build them again), resources past expiry and grace, and size,
 redundancy, item type or expiry that differ from the approved request (after the validation agent's changes).
 Untagged resources are reported one by one; requests that say "built" with nothing in Azure are reported as missing.
+Resources with a `request-id` tag anywhere else in the subscription are reported as `outside_sandbox` (the
+sandbox policies do not apply there).
 It never deletes or changes anything in Azure. Live inventory: `connectors/azure_inventory.py` (az CLI, read-only).

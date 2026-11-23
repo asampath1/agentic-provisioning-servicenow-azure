@@ -2,7 +2,7 @@
 
 Source: synthetic inventory. 84 resource(s), 32 SKR Cloud request(s). Report only: nothing was changed.
 
-18 finding(s):
+19 finding(s):
 
 | Request / resource | Resources | Problems |
 |---|---|---|
@@ -24,3 +24,4 @@ Source: synthetic inventory. 84 resource(s), 32 SKR Cloud request(s). Report onl
 | RITM0010183 | vm-test-ritm0010183, vm-test-ritm0010183-nic | **no_expiry_tag**: no valid expires-on tag |
 | RITM0010186 | (none) | **missing**: RITM0010186 says built, but nothing in the sandbox carries it |
 | RITM0010189 | (none) | **missing**: RITM0010189 says built, but nothing in the sandbox carries it |
+| stskrportal0001 | stskrportal0001 | **outside_sandbox**: storageAccounts stskrportal0001 (request RITM9999003) is in rg-skr-prov-platform, outside the sandbox |

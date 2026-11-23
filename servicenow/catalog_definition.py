@@ -18,6 +18,10 @@ APPROVERS = ["admin"]          # the PDI admin, so the demo can approve; add the
 # users without approval rights "not required" on insert (rule ApprovalEntitlementUponCreation), so the demo
 # requester gets the approver_user role. In a real setup: everyone who may order SKR Cloud items.
 REQUESTER_ROLE = "approver_user"
+# The PDI's request item stages are waiting_for_approval, fulfillment, delivery: no end stage. The worker sets
+# delivery after a build (in use) and complete after the expiry deletion: the hold rule sets it from
+# u_provisioning_state, because ServiceNow ignores stage written over the REST API.
+STAGE_CHOICES = [("complete", "Completed", "400")]
 REQUESTERS = ["synth.aditya.banerjee"]
 
 CATALOG = "Service Catalog"

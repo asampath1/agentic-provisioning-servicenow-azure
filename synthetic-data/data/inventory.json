@@ -1280,5 +1280,16 @@
     "redundancy": "Standard_LRS"
    }
   }
+ ],
+ "elsewhere": [
+  {
+   "name": "stskrportal0001",
+   "type": "Microsoft.Storage/storageAccounts",
+   "tags": {
+    "request-id": "RITM9999003",
+    "expires-on": "2026-12-01"
+   },
+   "resource_group": "rg-skr-prov-platform"
+  }
  ]
 }

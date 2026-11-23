@@ -60,7 +60,7 @@ az keyvault secret set --vault-name $KV --name snow-password --value "$p" -o non
 
 ```bash
 az group delete -n rg-skr-prov-sandbox --yes      # requested resources, VNet, policy assignments
-az group delete -n rg-skr-prov-platform --yes     # Key Vault, Template Specs, Automation account
+az group delete -n rg-skr-prov-platform --yes     # Key Vault, Template Specs, Automation account, guard policy
 az keyvault purge --name <vault name>             # soft-deleted vault (7-day retention)
 az role definition list --custom-role-only true --query "[?contains(roleName,'SKR Provisioning')].name" -o tsv \
   | xargs -I{} az role definition delete --name {}

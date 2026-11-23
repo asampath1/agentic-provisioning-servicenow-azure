@@ -70,16 +70,16 @@ Results: [`results/heuristic/`](results/heuristic/report.md) and [`results/claud
 ## Drift agent
 
 `score_drift.py` compares a drift run with `synthetic-data/data/drift_truth.json` (the only code that reads it).
-The set (`synthetic-data/generate_inventory.py`, as of 2026-11-25): 84 resources and 32 requests, scored as 34
-requests or untagged resources, 18 with drift seeded by hand (portal deployments with made-up or unapproved request
+The set (`synthetic-data/generate_inventory.py`, as of 2026-11-25): 84 resources and 32 requests (plus one tagged resource outside
+the sandbox), scored as 35 requests or resources, 19 with drift seeded by hand (portal deployments with made-up or unapproved request
 ids, a cancelled request whose VM exists, a resize, an expiry tag extended by hand, a VM carrying a storage request,
-leftovers without tags, deleted-by-hand resources). 16 are clean, 6 of them on purpose look suspicious: tag names in
+leftovers without tags, deleted-by-hand resources, a portal deployment into the platform resource group). 16 are clean, 6 of them on purpose look suspicious: tag names in
 other letter case, a request id in lower case, the validation agent's size change applied, an expired resource still
 inside its grace period, a deleted request with nothing left.
 
 | Metric | Result |
 |---|---|
-| **Missed drift** | **0 of 18** |
+| **Missed drift** | **0 of 19** |
 | False alarms | 0 |
 | Clean left alone (including the look-alikes) | 16 of 16 |
 | Problem codes (precision / recall) | 1.0 / 1.0 |
@@ -97,5 +97,6 @@ Both test storage accounts were deleted afterwards and the next run found no dri
 
 The first attempt taught me more than the second: the portal's Template Spec form defaults to the Template Spec's own
 resource group, so the storage account landed in `rg-skr-prov-platform`, where none of the sandbox policies apply and
-the drift agent does not look. Nothing caught it. Two fixes for later: deny VMs and storage accounts in the platform
-group, and have the drift agent flag `request-id`-tagged resources anywhere in the subscription.
+the drift agent does not look. Nothing caught it. Both fixed in P6: a policy denies VMs, disks, NICs and storage accounts in the platform
+group (`infra/modules/platform-guard.bicep`), and the drift agent reports `request-id`-tagged resources anywhere in
+the subscription outside the sandbox (`outside_sandbox`).

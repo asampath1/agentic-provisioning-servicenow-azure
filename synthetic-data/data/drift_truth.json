@@ -204,5 +204,12 @@
    "missing"
   ],
   "scenario": "request says built, storage account gone"
+ },
+ {
+  "key": "stskrportal0001",
+  "problems": [
+   "outside_sandbox"
+  ],
+  "scenario": "portal deployment into the platform resource group"
  }
 ]

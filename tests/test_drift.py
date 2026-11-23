@@ -62,6 +62,14 @@ def test_request_states():
     assert codes([], [deleted]) == {}
 
 
+def test_tagged_resources_outside_the_sandbox():
+    stray = {"name": "stskrdrift9999001", "type": "Microsoft.Storage/storageAccounts",
+             "tags": {"request-id": "RITM9999001"}, "resource_group": "rg-skr-prov-platform"}
+    assert codes(vm(), [req()]) == {}
+    got = {f.key: sorted(f.problems) for f in DriftAgent(TODAY).run(vm(), [req()], [stray])}
+    assert got == {"stskrdrift9999001": ["outside_sandbox"]}
+
+
 def test_report_lists_findings():
     text = report(DriftAgent(TODAY).run(vm(rid="RITM9999001"), []), 2, 0, TODAY, "test")
     assert "RITM9999001" in text and "unknown_request" in text and "nothing was changed" in text

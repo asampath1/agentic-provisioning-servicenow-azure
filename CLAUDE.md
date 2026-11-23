@@ -35,3 +35,8 @@ v1.0, never edit) and `../agentic-change-management-servicenow`.
   `tests/expiry_checks.ps1`). Drift agent `python -m agents.drift [--source live [--write]]`, scored by
   `python -m evaluation.score_drift runs/drift` against `drift_truth.json` (agents never read it); regenerate with
   `cd synthetic-data && python3 generate_inventory.py`. `servicenow/set_expiry.py` changes a request's expiry.
+- P6 done 2026-11-23: live demo RITM0010006 (`docs/live-demo.md`, screenshots in `docs/live-demo/`, cropped so no
+  subscription ID or PDI URL shows), plain-language `docs/overview.md`. Lifecycle: the RITM stays Work in Progress
+  while its resource exists (ServiceNow moots approvals on closed tasks); stage comes from the hold business rule
+  (REST writes to stage are ignored); requesters need `approver_user`. Platform RG guard policy
+  (`infra/modules/platform-guard.bicep`). Remaining: teardown before 15 Dec (commands in `infra/README.md`).

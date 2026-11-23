@@ -57,3 +57,23 @@ def test_api_failure_falls_back_to_regexes(tmp_path):
     r.prefetch([req])
     assert r.read(req) is None and r.errors
     assert ValidationAgent(Prices.snapshot(), reader=r).run(req).decision == "reject"     # regexes still apply
+
+
+def test_a_rejected_key_stops_the_run(tmp_path):
+    import pytest
+
+    from agents.text_reader import ClaudeReader
+
+    class AuthenticationError(Exception):
+        pass
+
+    class Client:
+        class messages:
+            @staticmethod
+            def create(**kw):
+                raise AuthenticationError("401 Invalid bearer token")
+
+    reader = ClaudeReader(client=Client(), cache=tmp_path / "c.json")
+    req = {"key": "R1", "variables": {"purpose": "x", "justification": "y"}}
+    with pytest.raises(SystemExit):
+        reader.prefetch([req])

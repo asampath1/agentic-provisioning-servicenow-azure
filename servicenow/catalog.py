@@ -13,7 +13,7 @@ import argparse
 import sys
 
 from catalog_definition import (APPROVER_GROUP, APPROVERS, BUSINESS_RULES, CATALOG, CATEGORY, ITEMS, REQUESTER_ROLE,
-                                REQUESTERS, RITM_FIELDS, TAG, script)
+                                REQUESTERS, STAGE_CHOICES, RITM_FIELDS, TAG, script)
 from load_to_snow import Snow
 
 
@@ -92,6 +92,12 @@ class Catalog:
                     "max_length": str(length), "active": "true"})
                 if r.status_code >= 300:
                     sys.exit(f"Could not create sc_req_item.{element}: HTTP {r.status_code} {r.text[:300]}")
+
+        print("== request item stages")
+        for value, label, seq in STAGE_CHOICES:
+            self.upsert("sys_choice", f"name=sc_req_item^element=stage^value={value}",
+                        {"name": "sc_req_item", "element": "stage", "value": value, "label": label,
+                         "sequence": seq, "language": "en", "inactive": "false"}, f"stage {value} ({label})")
 
         print("== category and items")
         cat = self.find("sc_catalog", f"title={CATALOG}")

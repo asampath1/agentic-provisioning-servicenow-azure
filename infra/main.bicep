@@ -59,6 +59,11 @@ module platform 'modules/platform.bicep' = {
   }
 }
 
+module platformGuard 'modules/platform-guard.bicep' = {
+  name: 'skr-prov-platform-guard'
+  scope: platformRg
+}
+
 module sandbox 'modules/sandbox.bicep' = {
   name: 'skr-prov-sandbox'
   scope: sandboxRg

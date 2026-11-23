@@ -13,6 +13,13 @@ def _az(*args: str) -> list:
     return json.loads(r.stdout or "[]")
 
 
+def tagged_elsewhere(rg: str) -> list[dict]:
+    """Resources anywhere in the subscription that carry a request-id tag but are not in the sandbox group."""
+    return [{"name": r["name"], "type": r["type"], "tags": r.get("tags") or {}, "resource_group": r["resourceGroup"]}
+            for r in _az("resource", "list", "--tag", "request-id")
+            if r["resourceGroup"].lower() != rg.lower()]
+
+
 def sandbox_resources(rg: str) -> list[dict]:
     sizes = {v["name"].lower(): v["hardwareProfile"]["vmSize"] for v in _az("vm", "list", "-g", rg)}
     out = []

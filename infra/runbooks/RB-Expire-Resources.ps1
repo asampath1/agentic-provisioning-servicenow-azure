@@ -54,6 +54,11 @@ function Get-Tag($Tags, [string]$Name) {
     return ''
 }
 
+function Get-ShortId([string]$Id) {
+    # Resource ID without the subscription, for text people read (change records, notes, screenshots)
+    return ($Id -replace '^/subscriptions/[^/]+/resourceGroups/', '')
+}
+
 function Get-ExpiryDate([string]$Value) {
     $d = [datetime]::MinValue
     if ([datetime]::TryParseExact($Value, 'yyyy-MM-dd', $null, 'None', [ref]$d)) { return $d }
@@ -181,7 +186,7 @@ foreach ($r in $resources) {
                     Remove-AzStorageAccount -ResourceGroupName $SandboxResourceGroup -Name $r.name -Force
                 }
                 $what = "Deleted expired $($r.kind) $($r.name) for $num (SKR Cloud expiry)"
-                $desc = "Automated deletion by the SKR expiry worker.`nRequest: $num`nResource: $($r.id)`nExpired: $expStr`nReason: $why."
+                $desc = "Automated deletion by the SKR expiry worker.`nRequest: $num`nResource: $(Get-ShortId $r.id)`nExpired: $expStr`nReason: $why."
                 $chg = $null
                 try { $chg = New-ChangeRecord $num $what $desc $start (Get-Date) }
                 catch { Write-Output "  change record failed: $($_.Exception.Message)" }

@@ -106,5 +106,11 @@
   "problems": [
    "missing"
   ]
+ },
+ {
+  "key": "stskrportal0001",
+  "problems": [
+   "outside_sandbox"
+  ]
  }
 ]

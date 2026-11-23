@@ -28,4 +28,5 @@ Check 'tag names ignore case' ((Get-Tag @{ 'Request-ID' = ' RITM0010005 ' } 'req
 Check 'missing tag is empty' ((Get-Tag @{ owner = 'x' } 'expires-on') -eq '')
 Check 'bad date' ($null -eq (Get-ExpiryDate 'never'))
 Check 'good date' ((Get-ExpiryDate '2026-11-23') -eq [datetime]'2026-11-23')
+Check 'short id has no subscription' ((Get-ShortId '/subscriptions/1111/resourceGroups/rg-x/providers/Microsoft.Compute/virtualMachines/vm1') -eq 'rg-x/providers/Microsoft.Compute/virtualMachines/vm1')
 if ($fail) { exit 1 } else { Write-Output 'ALL OK' }

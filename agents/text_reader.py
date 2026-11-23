@@ -2,7 +2,8 @@
 
 Used with ``python -m agents --reasoner claude``. Claude must return an exact quote from the request as evidence; a
 quote that is not in the request is rejected (and counted), so every flag can be checked. Results are cached on disk
-by (model, text hash), so a rerun costs nothing. API errors fall back to the policy regexes and are reported.
+by (model, text hash), so a rerun costs nothing. API errors fall back to the policy regexes and are reported;
+a rejected API key stops the run instead (a silent fallback would hide it).
 """
 from __future__ import annotations
 
@@ -71,6 +72,9 @@ class ClaudeReader:
                 self.cache.update(self._call(batch))
                 self.usage["read"] += len(batch)
             except Exception as e:      # noqa: BLE001 - any API failure: fall back to the regexes for this batch
+                if type(e).__name__ in ("AuthenticationError", "PermissionDeniedError"):
+                    raise SystemExit(f"Claude refused the API key ({type(e).__name__}): export a valid "
+                                     f"ANTHROPIC_API_KEY (and unset ANTHROPIC_AUTH_TOKEN) in this terminal.") from e
                 self.errors.append(f"{type(e).__name__}: {str(e)[:200]}")
             self.cache_path.parent.mkdir(parents=True, exist_ok=True)
             self.cache_path.write_text(json.dumps(self.cache, indent=1, sort_keys=True))

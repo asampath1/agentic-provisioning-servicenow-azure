@@ -14,6 +14,8 @@ The agent never deletes anything: drift is for a person to look at (design decis
   differs_from_request  size, redundancy, item type or expiry differ from the approved request (after the agent's
                         changes)
   missing               the request says built, but nothing in the sandbox carries its request-id
+  outside_sandbox       a resource with a request-id tag outside the sandbox resource group, where the sandbox
+                        policies do not apply (e.g. deployed from the portal into the Template Spec's own group)
 
   python -m agents.drift --out runs/drift                     # offline: the synthetic inventory (evaluation set)
   python -m agents.drift --source live --out runs/drift-live  # az CLI login + SN_* variables; report only
@@ -29,7 +31,7 @@ from datetime import date, timedelta
 PRIMARY = {"microsoft.compute/virtualmachines": "VM", "microsoft.storage/storageaccounts": "storage account"}
 CLOSED = {"cancelled", "blocked", "deleted"}
 SEVERITY_ORDER = ["unknown_request", "not_approved", "request_closed", "no_request_tag", "outside_worker", "expired",
-                  "differs_from_request", "no_expiry_tag", "missing"]
+                  "differs_from_request", "no_expiry_tag", "missing", "outside_sandbox"]
 
 
 @dataclass
@@ -69,7 +71,7 @@ class DriftAgent:
     def __init__(self, today: date, grace_days: int = 2):
         self.today, self.grace_days = today, grace_days
 
-    def run(self, resources: list[dict], requests: list[dict]) -> list[Finding]:
+    def run(self, resources: list[dict], requests: list[dict], elsewhere: list[dict] | None = None) -> list[Finding]:
         reqs = {r["number"].strip().upper(): r for r in requests}
         groups: dict[str, list[dict]] = {}
         out: list[Finding] = []
@@ -115,6 +117,11 @@ class DriftAgent:
             if req.get("u_provisioning_state") == "succeeded" and req.get("u_expiry_state") != "deleted" \
                     and rid not in present:
                 out.append(Finding(rid, [], {"missing": f"{rid} says built, but nothing in the sandbox carries it"}))
+        for res in elsewhere or []:
+            rid = tag(res.get("tags"), "request-id") or "(no request id)"
+            out.append(Finding(res["name"], [res["name"]], {"outside_sandbox": (
+                f"{res['type'].split('/')[-1]} {res['name']} (request {rid}) is in {res.get('resource_group')}, "
+                f"outside the sandbox")}))
         return out
 
     @staticmethod
@@ -187,15 +194,18 @@ def main() -> None:
         from .connectors.servicenow import ServiceNowRequests
 
         sn = ServiceNowRequests(write=a.write)
+        from .connectors.azure_inventory import tagged_elsewhere
+
         resources, requests = sandbox_resources(a.resource_group), sn.all_requests()
+        elsewhere = tagged_elsewhere(a.resource_group)
         today, source = a.as_of or date.today(), f"Azure {a.resource_group} + ServiceNow, live"
     else:
         from .connectors.local import local_inventory
 
         inv = local_inventory()
-        resources, requests = inv["resources"], inv["requests"]
+        resources, requests, elsewhere = inv["resources"], inv["requests"], inv.get("elsewhere", [])
         today, source = a.as_of or date.fromisoformat(inv["as_of"]), "synthetic inventory"
-    findings = DriftAgent(today, a.grace_days).run(resources, requests)
+    findings = DriftAgent(today, a.grace_days).run(resources, requests, elsewhere)
     text = report(findings, len(resources), len(requests), today, source)
     (out / "predictions.json").write_text(json.dumps([prediction(f) for f in findings], indent=1))
     (out / "findings.json").write_text(json.dumps([vars(f) for f in findings], indent=1))
