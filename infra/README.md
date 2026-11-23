@@ -58,6 +58,8 @@ az keyvault secret set --vault-name $KV --name snow-password --value "$p" -o non
 
 ## Teardown (before the trial ends on 15 Dec 2026)
 
+**Done 2026-11-23:** both resource groups deleted, the Key Vault purged, the custom role deleted.
+
 ```bash
 az group delete -n rg-skr-prov-sandbox --yes      # requested resources, VNet, policy assignments
 az group delete -n rg-skr-prov-platform --yes     # Key Vault, Template Specs, Automation account, guard policy

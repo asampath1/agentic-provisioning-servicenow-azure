@@ -8,7 +8,7 @@ Vault**. Expired resources are cleaned up, and anything created outside the proc
 > **Disclaimer:** *ShopKart Retails (SKR)* is a fictional company. All people, requests and records are synthetic.
 > No client or employer data is used.
 
-> **Status: complete (live Azure parts until the trial ends, 15 December 2026).** One VM went from a ServiceNow
+> **Status: complete. The Azure resources were torn down on 2026-11-23** (`infra/main.bicep` rebuilds them). One VM went from a ServiceNow
 > request to its deletion, live: validated, approved, built from a Template Spec, reminded, confirmed by the owner,
 > deleted, every step recorded ([live demo](docs/live-demo.md)). Validation agent: 0 of 17 wrong approvals with
 > Claude reading the text, 4 of 17 with rules only ([results](evaluation/README.md)). Drift agent: 0 of 19 missed on
