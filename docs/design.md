@@ -129,7 +129,7 @@ The Azure trial ends **mid-December 2026**, so the live Azure parts must be **do
 | P2 | ServiceNow catalog items, variables, approver group and approval rules on the PDI (`servicenow/catalog.py`, [details](../servicenow/README.md)). **Done 2026-11-20**: verified with a request ordered as a synthetic employee and approved by the cloud team | PDI |
 | P3 | Validation agent + synthetic request set + scoring ([policy](request-policy.md), [results](../evaluation/README.md)). **Done 2026-11-20**: heuristic 4 of 17 wrong approvals, with Claude reading rule 7: 0 of 17 ($0.04) | offline |
 | P4 | Provisioning worker: approved RITM → Template Spec deployment → change record + RITM update (`infra/runbooks/RB-Provision-Requests.ps1`). **Done 2026-11-20**: RITM0010005 built as `vm-test-ritm0010005`, recorded as CHG0030412 | Azure + PDI |
-| P5 | Expiry worker (`infra/runbooks/RB-Expire-Resources.ps1`) and drift agent (`agents/drift.py`). **In progress**: code and offline drift evaluation done 2026-11-21 (0 of 18 missed, 0 false alarms); live expiry of `vm-test-ritm0010005` 22-24 Nov | Azure + PDI |
+| P5 | Expiry worker (`infra/runbooks/RB-Expire-Resources.ps1`) and drift agent (`agents/drift.py`). **Done 2026-11-23**: drift 0 of 18 missed offline, live test caught a portal deployment (INC0010898); live expiry of `vm-test-ritm0010005`: reminder 22 Nov, deletion approval 23 Nov, approved by the requester, deleted and recorded as CHG0030413 | Azure + PDI |
 | P6 | Live demo (one VM requested → validated → approved → built → expired → deleted), write-up, overview | both |
 | — | **Teardown:** delete the resource group, the Template Specs, the policy assignment and the custom role | Azure |
 

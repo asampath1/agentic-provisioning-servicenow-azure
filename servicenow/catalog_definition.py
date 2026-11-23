@@ -14,6 +14,11 @@ SCRIPTS = Path(__file__).parent / "scripts"
 APPROVER_GROUP = {"name": "SKR Cloud Platform",
                   "description": f"Approves Azure self-service requests from the SKR Cloud catalog. {TAG}"}
 APPROVERS = ["admin"]          # the PDI admin, so the demo can approve; add the cloud team in a real setup
+# Requesters confirm the deletion of their expired resources with an approval (P5). ServiceNow marks approvals for
+# users without approval rights "not required" on insert (rule ApprovalEntitlementUponCreation), so the demo
+# requester gets the approver_user role. In a real setup: everyone who may order SKR Cloud items.
+REQUESTER_ROLE = "approver_user"
+REQUESTERS = ["synth.aditya.banerjee"]
 
 CATALOG = "Service Catalog"
 CATEGORY = {"title": "SKR Cloud (Azure)",

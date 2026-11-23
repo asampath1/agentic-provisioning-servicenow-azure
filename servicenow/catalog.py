@@ -12,8 +12,8 @@ Credentials: SN_INSTANCE, SN_USER, SN_PASSWORD (the API user, e.g. svc.aiops.loa
 import argparse
 import sys
 
-from catalog_definition import (APPROVER_GROUP, APPROVERS, BUSINESS_RULES, CATALOG, CATEGORY, ITEMS, RITM_FIELDS,
-                                TAG, script)
+from catalog_definition import (APPROVER_GROUP, APPROVERS, BUSINESS_RULES, CATALOG, CATEGORY, ITEMS, REQUESTER_ROLE,
+                                REQUESTERS, RITM_FIELDS, TAG, script)
 from load_to_snow import Snow
 
 
@@ -68,6 +68,16 @@ class Catalog:
             else:
                 self.upsert("sys_user_grmember", f"group={group}^user={u['sys_id']}",
                             {"group": group, "user": u["sys_id"]}, f"member {user}")
+
+        print(f"== requesters ({REQUESTER_ROLE}: to confirm deletions)")
+        role = self.find("sys_user_role", f"name={REQUESTER_ROLE}")
+        for user in REQUESTERS:
+            u = self.find("sys_user", f"user_name={user}")
+            if not u or not role:
+                print(f"  ! {'user ' + user if not u else 'role ' + REQUESTER_ROLE} not found: skipped")
+                continue
+            self.upsert("sys_user_has_role", f"user={u['sys_id']}^role={role['sys_id']}",
+                        {"user": u["sys_id"], "role": role["sys_id"]}, f"role {REQUESTER_ROLE} for {user}")
 
         print("== request fields (sc_req_item)")
         for element, label, length in RITM_FIELDS:

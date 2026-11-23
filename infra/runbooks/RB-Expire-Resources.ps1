@@ -9,7 +9,9 @@ them and, for each request, does at most one step per run:
   expire   expires-on reached: an approval "delete <name>?" for the requester. Approving it confirms the deletion.
   delete   the requester approved, or the grace period (GraceDays after expires-on) ended with no approval.
            The resource is deleted (a VM takes its disk and NIC with it), the deletion is recorded as a change
-           (model Change Registration), and the request item gets u_provisioning_state = deleted.
+           (model Change Registration), and the request item is closed (Closed Complete,
+           u_provisioning_state = deleted). The item stays open until then: ServiceNow's rule "Moot Approvals
+           Upon Cancellation" marks approvals on closed tasks not required, so the requester could not confirm.
 
 Nothing is deleted before the requester was asked (step "expire"). A rejected approval does not extend the
 resource: extensions are out of scope, so the reply explains that and the grace period still applies.
@@ -149,10 +151,18 @@ foreach ($r in $resources) {
         'expire' {
             if ($DryRun) { Write-Output "  [dry run] would ask $($it.'requested_for.user_name') to approve the deletion" }
             else {
-                Invoke-Snow POST '/api/now/table/sysapproval_approver' @{
+                $ap = (Invoke-Snow POST '/api/now/table/sysapproval_approver' @{
                     sysapproval = $it.sys_id; source_table = 'sc_req_item'; document_id = $it.sys_id
                     approver = $it.requested_for; state = 'requested'
-                    comments = "Delete $($r.kind) $($r.name)? It expired on $expStr. Approve to delete it now; with no reply it is deleted on $graceEnd." } | Out-Null
+                    comments = "Delete $($r.kind) $($r.name)? It expired on $expStr. Approve to delete it now; with no reply it is deleted on $graceEnd." }).result
+                $ap = (Get-Snow 'sysapproval_approver' "sys_id=$($ap.sys_id)" 'sys_id,state') | Select-Object -First 1   # read back: rules run after insert
+                if ($ap.state -ne 'requested') {
+                    # e.g. the requester has no approval rights (approver_user): ServiceNow marks it not required
+                    Write-Output "  approval was set to '$($ap.state)' by ServiceNow: the requester cannot confirm"
+                    Update-Item $it.sys_id @{} ("The deletion approval for $($it.'requested_for.user_name') was set to " +
+                        "'$($ap.state)' by ServiceNow (no approval rights?), so they cannot confirm. Without a " +
+                        "confirmation the resource is deleted on $graceEnd.")
+                }
             }
             Update-Item $it.sys_id @{ u_expiry_state = 'expired' } "Expired on $expStr. Deletion approval sent to $($it.'requested_for.user_name'); grace period ends $graceEnd." (
                 "Your $($r.kind) $($r.name) expired today. Please approve its deletion in My Approvals; with no reply " +
@@ -175,7 +185,7 @@ foreach ($r in $resources) {
                 $chg = $null
                 try { $chg = New-ChangeRecord $num $what $desc $start (Get-Date) }
                 catch { Write-Output "  change record failed: $($_.Exception.Message)" }
-                Update-Item $it.sys_id @{ u_expiry_state = 'deleted'; u_provisioning_state = 'deleted' } (
+                Update-Item $it.sys_id @{ u_expiry_state = 'deleted'; u_provisioning_state = 'deleted'; state = '3' } (
                     "Deleted $($r.name) ($why)." + $(if ($chg) { " Recorded as $chg." } else { '' })) (
                     "Your $($r.kind) $($r.name) has been deleted ($why).")
                 Write-Output "  deleted$(if ($chg) { " ($chg)" })"

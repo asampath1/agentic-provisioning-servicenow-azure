@@ -11,7 +11,7 @@ state yet:
   2. The agent's changes (u_ai_changes) are applied, then every value is checked against the sandbox policy again.
   3. The item is claimed (u_provisioning_state = deploying), then the Template Spec version is deployed into the
      sandbox resource group with the managed identity. Azure Policy checks the same rules again.
-  4. The result goes back to the item (state, resource ID, work note) and the build is recorded as a change
+  4. The result goes back to the item (Work in Progress while the resource exists, resource ID, work note) and the build is recorded as a change
      (model "Change Registration": a record of an automated change).
 
 Credentials: the ServiceNow API login comes from Key Vault (Automation variable KeyVaultName). No secret is in this
@@ -198,9 +198,11 @@ foreach ($it in @($items) | Select-Object -First $MaxItems) {
         $chg = $null
         try { $chg = New-ChangeRecord @{ number = $num } $plan $rid $start (Get-Date) }
         catch { Write-Output "$num : change record failed: $($_.Exception.Message)" }
-        Update-Item $it.sys_id @{ u_provisioning_state = 'succeeded'; u_azure_resource_id = $rid; state = '3'; stage = 'complete' } (
+        # The item stays open (Work in Progress) while the resource exists: the expiry worker asks the requester for
+        # an approval on it and closes it on deletion (ServiceNow moots approvals on closed tasks).
+        Update-Item $it.sys_id @{ u_provisioning_state = 'succeeded'; u_azure_resource_id = $rid; state = '2' } (
             "Built $($plan.name) in $SandboxResourceGroup ($detail). Expires $($final['expires_on']): it is deleted " +
-            "after that date." + $(if ($chg) { " Recorded as $chg." } else { '' }))
+            "after that date; this request stays open until then." + $(if ($chg) { " Recorded as $chg." } else { '' }))
         Write-Output "$num : succeeded -> $rid $(if ($chg) { "($chg)" })"
     } catch {
         $msg = $_.Exception.Message

@@ -104,6 +104,16 @@ request per run, kept in `u_expiry_state` on the request item:
 | expire | on `expires-on` | An approval for the requester: "Delete ...? Approve to delete it now" |
 | delete | the requester approved, or `GraceDays` after `expires-on` (default 2) with no approval | Deletes the VM (its disk and NIC go with it, `deleteOption: Delete`) and its auto-shutdown schedule, or the storage account; records a change (Change Registration); `u_provisioning_state = deleted` |
 
+**The request item stays open (Work in Progress) while its resource exists** and is closed on deletion. My first
+live run closed it at build time, and ServiceNow's rule "Moot Approvals Upon Cancellation" then marked the
+deletion approval "not required" the moment it was created. The requester also needs the `approver_user` role
+to act on approvals (`catalog.py` grants it to the demo requester). The runbook reads the approval back and says so
+in a work note if ServiceNow did not leave it Requested.
+
+Live run (2026-11-22/23, `ReminderDays=1 GraceDays=1`): reminder on 22 Nov; on 23 Nov the deletion approval, approved
+by the requester in the portal; the next run deleted `vm-test-ritm0010005` with its disk, NIC and schedule
+(CHG0030413) and closed RITM0010005.
+
 Nothing is deleted before the requester was asked: a resource found long after its expiry is asked first and
 deleted on a later run. A rejected deletion approval does not extend anything (extensions are out of scope); the
 grace period still applies. The worker deletes only in the sandbox resource group, within its custom role.
